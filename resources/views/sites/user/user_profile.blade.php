@@ -5,6 +5,9 @@
 @endsection
 
 @section('content')
+    <?php
+    $i = 1;
+    ?>
     <div class="nav-icon">
         <a href="#" class="navicon"></a>
         <div class="toggle">
@@ -29,7 +32,7 @@
     </div>
     @include('sections.menu.header')
 
-    <div class="container bootstrap snippet background_user user-profile">
+    <div class="container bootstrap snippet background_user user-profile" style="height: 700px">
         <div class="col-sm-3 sidebar">
             <div class="row fix-profile-bottom">
                 <div class="img-avata-icon">
@@ -73,64 +76,45 @@
                 </a>
             </div>
         </div>
-        <div class="col-sm-8">
+        <div class="col-sm-8" style="margin-left: 25px;">
             <div class="title-thongtindonhang">Purchase History</div>
             <hr>
             <div class="row">
-                <ul class="nav nav-tabs" id="myTab">
-                    <li class="active"><a href="#order-done" data-toggle="tab">All Orders</a></li>
-                    <li><a href="#order-cancel" data-toggle="tab">Orders Canceled</a></li>
+                <ul id="tabs">
+                    <li><a href="#" name="tab1">All Orders</a></li>
+                    <li><a href="#" name="tab2">Canceled Orders</a></li>
                 </ul>
-                <div class="tab-content">
-                    <div class="tab-pane active" id="order-doing">
-                        <div class="table-responsive status-order">
-                            <table class="table table-hover">
-                                <thead>
-                                <tr>
-                                    <th class="text-center weight-title">Thời gian</th>
-                                    <th class="text-center weight-title">Tên hàng</th>
-                                    <th class="text-center weight-title">Số lượng</th>
-                                    <th class="text-center weight-title">Đơn giá</th>
-                                    <th class="text-center weight-title">Thành tiền</th>
-                                    <th class="text-center weight-title" colspan="2">Action</th>
-                                </tr>
-                                </thead>
-                                <tbody id="items">
 
-                                </tbody>
-                            </table>
-                            <hr>
-                            <div class="row">
-                                <div class="col-md-6 col-md-offset-4 text-center">
-                                    <ul class="pagination" id="myPager"></ul>
-                                </div>
-                            </div>
-                        </div><!--/table-resp-->
-                        <hr>
-                    </div><!--/tab-pane-->
-                    <div class="tab-pane" id="order-done">
-                        <div class="table-responsive status-order">
+                <div id="content">
+                    <div id="tab1">
+                        <div class="table-responsive status-order" style="border-radius: 10px;">
                             <table class="table table-hover">
                                 <thead>
                                 <tr>
-                                    <th class="text-center weight-title">Thời gian</th>
-                                    <th class="text-center weight-title">Tên hàng</th>
-                                    <th class="text-center weight-title">Số lượng</th>
-                                    <th class="text-center weight-title">Đơn giá</th>
-                                    <th class="text-center weight-title">Thành tiền</th>
-                                    <th class="text-center weight-title" colspan="2">Action</th>
+                                    <th class="text-center weight-title">Time</th>
+                                    <th class="text-center weight-title">Order</th>
+                                    <th class="text-center weight-title">Products</th>
+                                    <th class="text-center weight-title">Total</th>
+                                    <th class="text-center weight-title">Status</th>
+                                    <th class="text-center weight-title">Action</th>
                                 </tr>
                                 </thead>
-                                <tbody id="items">
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                </tbody>
+                                @foreach($orders as $order)
+                                    <tbody id="items">
+                                    <td>{{$order->created_at}}</td>
+                                    <td>{{$i++}}</td>
+                                    <td>{{$order->product_count}}</td>
+                                    <td>${{$order->sum}}</td>
+                                    <td>{{$order->status}}</td>
+                                    <td>
+                                        <a href="#">
+                                            <span class="glyphicon glyphicon-eye-open"></span>
+                                        </a>
+                                    </td>
+                                    </tbody>
+                                @endforeach
+                                <tr></tr>
                             </table>
-                            <hr>
                             <div class="row">
                                 <div class="col-md-6 col-md-offset-4 text-center">
                                     <ul class="pagination" id="myPager"></ul>
@@ -138,18 +122,18 @@
                             </div>
                         </div><!--/table-resp-->
                         <hr>
-                    </div><!--/tab-pane-->
-                    <div class="tab-pane" id="order-cancel">
+                    </div>
+                    <div id="tab2">
                         <div class="table-responsive status-order">
                             <table class="table table-hover">
                                 <thead>
                                 <tr>
-                                    <th class="text-center weight-title">Thời gian</th>
-                                    <th class="text-center weight-title">Tên hàng</th>
-                                    <th class="text-center weight-title">Số lượng</th>
-                                    <th class="text-center weight-title">Đơn giá</th>
-                                    <th class="text-center weight-title">Thành tiền</th>
-                                    <th class="text-center weight-title" colspan="2">Action</th>
+                                    <th class="text-center weight-title">Time</th>
+                                    <th class="text-center weight-title">Order</th>
+                                    <th class="text-center weight-title">Products</th>
+                                    <th class="text-center weight-title">Total</th>
+                                    <th class="text-center weight-title">Status</th>
+                                    <th class="text-center weight-title">Action</th>
                                 </tr>
                                 </thead>
                                 <tbody id="items">
@@ -170,7 +154,7 @@
                         </div><!--/table-resp-->
                         <hr>
                     </div>
-                </div><!--/tab-pane-->
+                </div>
             </div><!--/tab-content-->
         </div><!--/col-9-->
     </div><!--/row-->
@@ -326,5 +310,25 @@
 
 @section('script')
     {{ HTML::script('js/sites/homepage.js') }}
-@endsection
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#content").find("[id^='tab']").hide(); // Hide all content
+            $("#tabs li:first").attr("id", "current"); // Activate the first tab
+            $("#content #tab1").fadeIn(); // Show first tab's content
 
+            $('#tabs a').click(function (e) {
+                e.preventDefault();
+                if ($(this).closest("li").attr("id") == "current") { //detection for current tab
+                    return;
+                }
+                else {
+                    $("#content").find("[id^='tab']").hide(); // Hide all content
+                    $("#tabs li").attr("id", ""); //Reset id's
+                    $(this).parent().attr("id", "current"); // Activate this
+                    $('#' + $(this).attr('name')).fadeIn(); // Show content for the current tab
+                }
+            });
+        });
+    </script>
+@endsection

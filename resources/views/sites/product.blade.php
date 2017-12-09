@@ -51,7 +51,7 @@
                                         <ul id="aaa">
                                             @if($prd_img->count() > 0 )
                                                 @foreach($prd_img as $pi)
-                                                        <li><a class="ns-img" href="/img/{!! $pi->image !!}"></a></li>
+                                                    <li><a class="ns-img" href="/img/{!! $pi->image !!}"></a></li>
                                                 @endforeach
                                             @else
                                                 <li>
@@ -87,9 +87,9 @@
                             </div>
                             <div class="row starr">
                                 <input id="input-id" type="text" class="rating" data-min="0"
-                                          data-max="5"
-                                          data-size="xs" data-step=0.5 value="{!! $prd_detail->rated !!}"
-                                          title="">
+                                       data-max="5"
+                                       data-size="xs" data-step=0.5 value="{!! $prd_detail->rated !!}"
+                                       title="">
                                 <h4>This product is rated {!! $prd_detail->rated !!} stars</h4>
                             </div>
                             <div class="row">
@@ -103,8 +103,8 @@
                                 </div>
                                 <div class="col-md-5">
                                     <span>Avability :</span>
-                                    @if($prd_detail->status == 1)
-                                        <span style="color: red">In stock</span>
+                                    @if($prd_detail->status == 0)
+                                        <span style="color: green">In stock</span>
                                     @else
                                         <span style="color: red">Out stock</span>
                                     @endif
@@ -125,7 +125,9 @@
                                 </div>
                                 <div class="row">
                                     <div class="action">
-                                        <button class="add-to-cart btn btn-default" type="button">add to cart</button>
+                                        <button class="add-to-cart btn btn-default" type="submit"
+                                                style="margin-top: 20px;">add to cart
+                                        </button>
                                     </div>
                                 </div>
                             </form>
@@ -139,7 +141,7 @@
                 <div class="row">
                     <hr>
                     <div class="product-other-title">
-                        <h2>sản phẩm tương tự</h2>
+                        <h2>Similar Products</h2>
                     </div>
                 </div>
                 <div class="row">

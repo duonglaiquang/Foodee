@@ -783,6 +783,10 @@ About Section
     color: #6d6c6c;
 }
 
+#headdddd a:hover {
+    color: inherit !important;
+}
+
 #footer-main ul {
     list-style: none;
 }

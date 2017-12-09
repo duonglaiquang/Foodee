@@ -83,8 +83,8 @@
                                             </div>
                                         </td>
                                         <td class="col-sm-1 col-md-1" style="text-align: center">
-                                            <input type="number" class="qty" name="qty[]"
-                                                   value={{$product->quantity}}>
+                                            <input type="number" class="qty" name="qty[]" min="1"
+                                                   value={{$product->quantity}} >
                                         </td>
                                         <td class="col-sm-1 col-md-1 text-center">
                                             <span class="price">${{$product->price}}</span>

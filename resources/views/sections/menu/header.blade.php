@@ -1,10 +1,9 @@
 <div class="header-menu"></div>
 <div class="header-first">
     <div class="col-md-3">
-        <div class="title">
-            <a href={{route('home')}}><span>F</span><img src=" {{ asset('img/oo.png') }}" alt=""><img
-                        src=" {{ asset('img/oo.png') }}"
-                        alt="">dee</a></h1>
+        <div class="title" id="headdddd">
+            <a href={{route('home')}}><span>F</span><img src="{{ asset('img/oo.png') }}" alt=""><img
+                        src="{{asset('img/oo.png')}}" alt="">dee</a></h1>
         </div>
 
     </div>
