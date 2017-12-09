@@ -271,6 +271,8 @@
             </div>
         </div>
     </div>
+    {{--<!--//end edit information -->--}}
+    {{--<!-- dialog edit password-->--}}
     <div id="modalPassword" class="modal fade" role="dialog">
         <div class="modal-dialog form-edit">
             <!-- Modal content-->

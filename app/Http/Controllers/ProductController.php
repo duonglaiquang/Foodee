@@ -23,7 +23,7 @@ class ProductController extends Controller
         $prd_detail = $this->prd_detail->where('id', '=', "$id")->first();
         $prd_img = $this->prd_img->where('product_id', '=', "$id")->get();
         $prd_similar = $this->prd_detail
-            ->whereBetween('price', [$prd_detail->price - 10000, $prd_detail->price + 10000])
+            ->whereBetween('price', [$prd_detail->price - 10, $prd_detail->price + 10])
             ->take(4)->get();
         $prd_id = $id;
 

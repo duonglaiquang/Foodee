@@ -18,6 +18,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/menu', 'MenuController@index')->name('menu');
 
+Route::post('user/changePassword', 'UserController@changePassword')->name('user.change.password');
+
 Route::get('product/{id}', 'ProductController@detail')->name('product.detail');
 
 Route::group(['middleware' => 'auth'], function () {

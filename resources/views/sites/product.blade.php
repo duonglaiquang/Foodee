@@ -2,6 +2,8 @@
 @section('style')
     <title>Product</title>
     {{ HTML::style('/css/sites/product_detail.css') }}
+    {{ HTML::style('/bower/bootstrap-star-rating/css/star-rating.css') }}
+    {{ HTML::style('/bower/bootstrap-star-rating/themes/krajee-svg/theme.css')}}
 @endsection
 
 @section('content')
@@ -49,7 +51,7 @@
                                         <ul id="aaa">
                                             @if($prd_img->count() > 0 )
                                                 @foreach($prd_img as $pi)
-                                                    <li><a class="ns-img" href="../img/{!! $pi->image !!}"></a></li>
+                                                        <li><a class="ns-img" href="/img/{!! $pi->image !!}"></a></li>
                                                 @endforeach
                                             @else
                                                 <li>
@@ -65,13 +67,12 @@
                                                 @if($prd_img->count() > 0)
                                                     @foreach($prd_img as $pi)
                                                         <li>
-                                                            <a class="thumb" href="../img/{!! $pi->image !!}"></a>
+                                                            <a class="thumb" href="/img/{!! $pi->image !!}"></a>
                                                         </li>
                                                     @endforeach
                                                 @else
                                                     <li>
-                                                        <a class="thumb"
-                                                           href="../img/{!! asset('img/no_image.jpg') !!}"></a>
+                                                        <a class="thumb" href="{!! asset('img/no_image.jpg') !!}"></a>
                                                     </li>
                                                 @endif
                                             </ul>
@@ -84,25 +85,29 @@
                             <div class="row">
                                 <h3 class="product-title">{!! $prd_detail->name !!}</h3>
                             </div>
-                            <div class="row">
-                                <div class="rating">
-                                    <div class="stars">
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                    </div>
-                                    <span class="review-no">41 reviews</span>
-                                </div>
+                            <div class="row starr">
+                                <input id="input-id" type="text" class="rating" data-min="0"
+                                          data-max="5"
+                                          data-size="xs" data-step=0.5 value="{!! $prd_detail->rated !!}"
+                                          title="">
+                                <h4>This product is rated {!! $prd_detail->rated !!} stars</h4>
                             </div>
                             <div class="row">
                                 <p class="product-description">{!! $prd_detail->description !!}</p>
                             </div>
                             <div class="row">
                                 <div class="col-md-7">
-                                    <h4 class="price">current price: <span>{!! $prd_detail->price !!}</span><i
-                                                class="fa fa-dollar"></i></h4>
+                                    <h4 class="price">current price: <span>{!! $prd_detail->price !!}
+                                        </span><i class="fa fa-dollar"></i>
+                                    </h4>
+                                </div>
+                                <div class="col-md-5">
+                                    <span>Avability :</span>
+                                    @if($prd_detail->status == 1)
+                                        <span style="color: red">In stock</span>
+                                    @else
+                                        <span style="color: red">Out stock</span>
+                                    @endif
                                 </div>
                             </div>
                             <form action="{{route('addToCart',$prd_id)}}" method="POST">
@@ -117,18 +122,10 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <p class="vote col-md-12"><strong>91%</strong> of buyers enjoyed this product!
-                                        <strong>(87
-                                            votes)</strong></p>
                                 </div>
                                 <div class="row">
                                     <div class="action">
-                                        <button class="add-to-cart btn btn-default" type="submit">add to cart
-                                        </button>
-
-                                        <button class="like btn btn-default" type="button"><span
-                                                    class="fa fa-heart"></span>
-                                        </button>
+                                        <button class="add-to-cart btn btn-default" type="button">add to cart</button>
                                     </div>
                                 </div>
                             </form>
@@ -150,7 +147,7 @@
                         @foreach($prd_similar as $ps)
                             <div class="col-md-3 col-xs-2">
                                 <a href="{{ route('product.detail', [ 'id' => $ps->id ]) }}">
-                                    <img src="../img/{!! $ps->avatar !!}">
+                                    <img src="/img/{!! $ps->avatar !!}">
                                     <h3>{!! $ps->name !!}</h3>
                                 </a>
                             </div>
@@ -167,5 +164,8 @@
 @section('script')
     {{ HTML::script('/js/sites/homepage.js') }}
     {{ HTML::script('/js/sites/product_detail.js') }}
+    {{ HTML::script('/js/sites/star-rating.js')}}
+    {{ HTML::script('/bower/bootstrap-star-rating/js/locales/LANG.js')}}
+    {{ HTML::script('/bower/bootstrap-star-rating/themes/krajee-svg/theme.js')}}
 @endsection
 

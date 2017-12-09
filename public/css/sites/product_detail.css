@@ -97,6 +97,10 @@ img {
     flex-direction: column;
 }
 
+.details h3 {
+    font-size: 150%;
+}
+
 .colors {
     -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
@@ -614,4 +618,13 @@ a:hover {
 
 #aaa {
     padding-top: 58% !important;
+}
+/*starrr*/
+.starr {
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+.starr i {
+    font-size: 55%;
 }

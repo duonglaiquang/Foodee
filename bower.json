@@ -36,7 +36,8 @@
     "teamdf/jquery-number": "customd/jquery-number#^2.1.6",
     "vue2-filters": "freearhey/vue2-filters#^0.2.2",
     "bootbox": "https://github.com/makeusabrew/bootbox.git",
-    "flexslider": "FlexSlider#^2.6.4"
+    "flexslider": "FlexSlider#^2.6.4",
+    "bootstrap-star-rating": "^4.0.3"
   },
   "resolutions": {
     "jquery": ">=1.8.3",
