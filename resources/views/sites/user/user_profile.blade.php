@@ -9,7 +9,7 @@
         <div class="toggle">
             <ul class="toggle-menu">
                 @if(Auth::user()->level == 1)
-                    <li><a class="active" href="#">ADMIN</a></li>
+                    <li><a href="{{route('admin_home')}}">ADMIN</a></li>
                 @endif
                 <li><a href="{{route('home')}}">Home</a></li>
                 <li><a href="{{route('menu')}}">Menu</a></li>

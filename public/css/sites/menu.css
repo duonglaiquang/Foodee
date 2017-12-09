@@ -721,9 +721,8 @@ About Section
 
 /*footer*/
 #footer-sub {
-    padding-top: 5px;
-    background-color: #f3f7f8;
-    border-top: 1px solid #dbdbdb;
+    margin-top: 30px;
+    font-size: 1.2em;
 }
 
 #footer-sub h5 {
@@ -777,8 +776,7 @@ About Section
 }
 
 #sub-two {
-    margin: 0px;
-    padding: 0px;
+    margin-right: 2%;
 }
 
 #sub-two .vertical-line h4 {

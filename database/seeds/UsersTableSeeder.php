@@ -16,13 +16,13 @@ class UsersTableSeeder extends Seeder
             [
                 [
                     'email'         => 'admin@gmail.com',
-                    'password'      => bcrypt('123456'),
+                    'password'      => bcrypt('admin'),
                     'name'          => 'admin',
                     'date_of_birth' => '19961104',
                     'gender'        => '1',
                     'phone'         => '0943901988',
                     'address'       => '117 Hang Bong, Hoan Kiem, Ha Noi',
-
+                    'level'         => '1',
                 ],
                 [
                     'email'         => 'duong@gmail.com',
@@ -32,7 +32,7 @@ class UsersTableSeeder extends Seeder
                     'gender'        => '1',
                     'phone'         => '0943966988',
                     'address'       => '119 Hang Ma, Hoan Kiem, Ha Noi',
-
+                    'level'         => '1',
                 ],
                 [
                     'email'         => 'pho.duc.dat@framgia.com',
@@ -42,7 +42,7 @@ class UsersTableSeeder extends Seeder
                     'gender'        => '1',
                     'phone'         => '0915966988',
                     'address'       => '200 Nghia Tan, Cau Giay, Ha Noi',
-
+                    'level'         => '0',
                 ],
                 [
                     'email'         => 'minhth@yahoo.com',
@@ -52,7 +52,7 @@ class UsersTableSeeder extends Seeder
                     'gender'        => '1',
                     'phone'         => '0915136988',
                     'address'       => '420 Quan Hoa, Cau Giay, Ha Noi',
-
+                    'level'         => '0',
                 ],
                 [
                     'email'         => 'NhanNT@gmail.com',
@@ -62,7 +62,7 @@ class UsersTableSeeder extends Seeder
                     'gender'        => '1',
                     'phone'         => '0915136555',
                     'address'       => '300 Dich Vong, Cau Giay, Ha Noi',
-
+                    'level'         => '0',
                 ],
                 [
                     'email'         => 'ThaoPN@gmail.com',
@@ -72,7 +72,7 @@ class UsersTableSeeder extends Seeder
                     'gender'        => '0',
                     'phone'         => '0915133355',
                     'address'       => '15 Nguyen Van Huong, Thao Dien, Ho Chi Minh',
-
+                    'level'         => '0',
                 ],
                 [
                     'email'         => 'AnhNH@gmail.com',
@@ -82,7 +82,7 @@ class UsersTableSeeder extends Seeder
                     'gender'        => '0',
                     'phone'         => '0915233254',
                     'address'       => '34 Nghia Do, Cau Giay, Ha Noi',
-
+                    'level'         => '0',
                 ],
                 [
                     'email'         => 'HoangDucQuan@gmail.com',
@@ -92,7 +92,7 @@ class UsersTableSeeder extends Seeder
                     'gender'        => '1',
                     'phone'         => '0911233355',
                     'address'       => '300 Mai Dich, Cau Giay, Ha Noi',
-
+                    'level'         => '0',
                 ],
                 [
                     'email'         => 'HungNM@gmail.com',
@@ -102,7 +102,7 @@ class UsersTableSeeder extends Seeder
                     'gender'        => '1',
                     'phone'         => '0932956355',
                     'address'       => '77 Mai Dich, Cau Giay, Ha Noi',
-
+                    'level'         => '0',
                 ],
 
             ]

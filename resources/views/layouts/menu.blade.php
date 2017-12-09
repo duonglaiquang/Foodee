@@ -2,7 +2,6 @@
 <HTML lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Menu</title>
     {{ HTML::style('/bower/bootstrap/dist/css/bootstrap.css') }}
     {{ HTML::style('/bower/owl.carousel/dist/assets/owl.carousel.css') }}
     {{ HTML::style('/bower/owl.carousel/dist/assets/owl.theme.default.css') }}

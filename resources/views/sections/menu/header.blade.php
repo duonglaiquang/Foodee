@@ -2,9 +2,11 @@
 <div class="header-first">
     <div class="col-md-3">
         <div class="title">
-            <a href={{route('home')}}><span>F</span><img src="img/oo.png" alt=""><img src="img/oo.png"
-                                                                                      alt="">dee</a></h1>
+            <a href={{route('home')}}><span>F</span><img src=" {{ asset('img/oo.png') }}" alt=""><img
+                        src=" {{ asset('img/oo.png') }}"
+                        alt="">dee</a></h1>
         </div>
+
     </div>
     <div class="col-md-6 header-navbar"><input class="flipkart-navbar-input col-xs-11" type="text"
                                                placeholder="Search for Products, Brands and more" name="">
@@ -23,8 +25,14 @@
     </div>
     <div class="header-navbar-btn">
         <a href="{{route('showCart')}}" class="cart-button">
-            <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i><span class="item-number"
-                                                                              style="font-size: 20px;margin-left: 5px;"></span>
+            @if(Auth::user())
+                <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i><span class="item-number"
+                                                                                  style="font-size: 20px;margin-left: 5px;">({{Auth::user()->cart}}
+                    )</span>
+            @else
+                <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i><span class="item-number"
+                                                                                  style="font-size: 20px;margin-left: 5px;">0</span>
+            @endif
         </a>
     </div>
 </div>

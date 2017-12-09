@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
                 $table->string('address')->nullable()->default(null);
                 $table->integer('level')->default(0);
                 $table->string('avatar')->nullable()->default(null);
+                $table->integer('cart')->nullable()->default(0);
                 $table->rememberToken();
                 $table->timestamps();
             });

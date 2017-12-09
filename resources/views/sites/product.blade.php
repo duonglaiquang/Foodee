@@ -1,5 +1,6 @@
 @extends('layouts.menu')
 @section('style')
+    <title>Product</title>
     {{ HTML::style('/css/sites/product_detail.css') }}
 @endsection
 
@@ -10,22 +11,17 @@
             <ul class="toggle-menu">
                 @if (Auth::guest())
                     <li><a href="{{route('home')}}">Home</a></li>
-                    <li><a class="active" href="{{route('menu')}}">Menu</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Events</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="{{route('menu')}}">Menu</a></li>
                     <li><a href="{{ route('login') }}">Login</a></li>
                     <li><a href="{{ route('register') }}">Register</a></li>
                 @else
                     <h3>Hello {{Auth::user()->name}}</h3>
                     @if(Auth::user()->level == 1)
-                        <li><a class="active" href="#">ADMIN</a></li>
+                        <li><a href="{{route('admin_home')}}">ADMIN</a></li>
                     @endif
-                    <li><a class="active" href="{{route('home')}}">Home</a></li>
+                    <li><a href="{{route('home')}}">Home</a></li>
                     <li><a href="{{route('menu')}}">Menu</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Events</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="{{route('showCart')}}">Your Cart</a></li>
                     <li><a href="{{route('user.profile',Auth::user()->id)}}">Profile</a></li>
                     <li>
                         <a href="javascript:void(0)" id="logout-1">
@@ -47,13 +43,13 @@
                 <div class="container-fliud">
                     <div class="wrapper">
                         <div class="preview col-md-7">
-                            <div id='ninja-slider'>
+                            <div id='ninja-slider' style="border-radius: 15px">
                                 <div>
                                     <div class="slider-inner">
-                                        <ul>
+                                        <ul id="aaa">
                                             @if($prd_img->count() > 0 )
                                                 @foreach($prd_img as $pi)
-                                                        <li><a class="ns-img" href="../img/{!! $pi->image !!}"></a></li>
+                                                    <li><a class="ns-img" href="../img/{!! $pi->image !!}"></a></li>
                                                 @endforeach
                                             @else
                                                 <li>
@@ -74,7 +70,8 @@
                                                     @endforeach
                                                 @else
                                                     <li>
-                                                        <a class="thumb" href="../img/{!! asset('img/no_image.jpg') !!}"></a>
+                                                        <a class="thumb"
+                                                           href="../img/{!! asset('img/no_image.jpg') !!}"></a>
                                                     </li>
                                                 @endif
                                             </ul>
@@ -106,14 +103,6 @@
                                 <div class="col-md-7">
                                     <h4 class="price">current price: <span>{!! $prd_detail->price !!}</span><i
                                                 class="fa fa-dollar"></i></h4>
-                                </div>
-                                <div class="col-md-5">
-                                    <span>Avability :</span>
-                                    @if($prd_detail->status == 1)
-                                        <span style="color: red">In stock</span>
-                                    @else
-                                        <span style="color: red">Out stock</span>
-                                    @endif
                                 </div>
                             </div>
                             <form action="{{route('addToCart',$prd_id)}}" method="POST">

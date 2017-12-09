@@ -20,6 +20,7 @@ class CreatOrdersTable extends Migration
                 $table->integer('product_count')->nullable()->default(0);
                 $table->string('note')->nullable()->default(null);
                 $table->string('status')->nullable()->default('pending');
+                $table->integer('sum')->nullable()->default(0);
                 $table->timestamps();
             });
         }
