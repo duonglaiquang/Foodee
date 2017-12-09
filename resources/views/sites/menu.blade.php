@@ -3,7 +3,7 @@
     <title>Menu</title>
 @endsection
 {{ HTML::style('css/sites/bootstrap-responsive.min.css') }}
-{{ HTML::style('css/sites/search-list.css') }}
+{{ HTML::style('bower/jquery-ui/themes/base/jquery-ui.css') }}
 @section('content')
 
     <div class="nastv-icon">
@@ -43,26 +43,6 @@
                 <div class="span12">
                     <div class="title-page">
                         <h2 class="title">Show Food </h2>
-                    </div>
-                    <div id='cssmenu'>
-                        <ul>
-                            <li class='active has-sub'><a href='#'><span>Products</span></a>
-                                <ul>
-                                    <li class='has-sub'><a href='#'><span>Product 1</span></a>
-                                        <ul>
-                                            <li><a href='#'><span>Sub Product</span></a></li>
-                                            <li class='last'><a href='#'><span>Sub Product</span></a></li>
-                                        </ul>
-                                    </li>
-                                    <li class='has-sub'><a href='#'><span>Product 2</span></a>
-                                        <ul>
-                                            <li><a href='#'><span>Sub Product</span></a></li>
-                                            <li class='last'><a href='#'><span>Sub Product</span></a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -152,11 +132,13 @@
         </ul>
     </nav>
     </div>
-
     @include('sections.menu.footer')
 @endsection
 
 @section('script')
+    {{-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> --}}
+    {{ HTML::script('bower/jquery-1.12.4/index.js')}}
+    {{ HTML::script('bower/jquery-ui/jquery-ui.js') }}
     {{ HTML::script('js/sites/homepage.js') }}
     {{ HTML::script('js/sites/page_menu.js') }}
 @endsection

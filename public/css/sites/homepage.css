@@ -257,7 +257,9 @@ a:hover {
     color: white;
     text-align: center;
     font-family: "Merriweather", serif;
-    text-transform: capitalize;
+    text-transform: uppercase;
+    text-shadow: 2px 5px 3px red;
+    font-size: x-large;
 }
 
 #fh5co-container {

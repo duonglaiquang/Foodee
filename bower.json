@@ -36,8 +36,10 @@
     "teamdf/jquery-number": "customd/jquery-number#^2.1.6",
     "vue2-filters": "freearhey/vue2-filters#^0.2.2",
     "bootbox": "https://github.com/makeusabrew/bootbox.git",
+    "jquery-ui": "jqueryui#^1.12.1",
     "flexslider": "FlexSlider#^2.6.4",
-    "bootstrap-star-rating": "^4.0.3"
+    "bootstrap-star-rating": "^4.0.3",
+    "jquery-1.12.4": "https://code.jquery.com/jquery-1.12.4.js"
   },
   "resolutions": {
     "jquery": ">=1.8.3",

@@ -29,6 +29,10 @@ class ProductController extends Controller
 
         return view('sites.product', compact('prd_id', 'prd_detail', 'prd_img', 'prd_similar'));
     }
+    public function getdata_product(){
+        $product = Product::all();
+        return Response::json($product) ;
+    }
     public function getdata_food(){
         $food = Product::where('category','=','Food')->paginate(12);
         return Response::json($food) ;

@@ -19,6 +19,7 @@ Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/menu', 'MenuController@index')->name('menu');
+Route::post('/product_search/{name}', 'MenuController@search')->name('search');
 
 Route::get('product/{id}', 'ProductController@detail')->name('product.detail');
 
@@ -44,6 +45,7 @@ Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallba
 Route::group(['prefix' => 'api/v1'], function () {
     Route::get('foods', 'ProductController@getdata_food');
     Route::get('drinks', 'ProductController@getdata_drink');
+    Route::get('products', 'ProductController@getdata_product');
     Route::get('all_foods', 'ProductController@all_food');
     Route::get('all_drinks', 'ProductController@all_drink');
     // food
