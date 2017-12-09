@@ -11,7 +11,7 @@
         <div class="toggle">
             <ul class="toggle-menu">
                 @if (Auth::guest())
-                    <li><a href="{{route('home')}}">Home</a></li>
+                        <li><a href="{{route('home')}}">Home</a></li>
                     <li><a class="active" href="{{route('menu')}}">Menu</a></li>
                     <li><a href="{{ route('login') }}">Login</a></li>
                     <li><a href="{{ route('register') }}">Register</a></li>
@@ -64,6 +64,12 @@
                 </section>
             </div>
         </div>
+    </div>
+    <div class="modal" id="info-product" role="dialog">
+        <div class="modal-dialog">
+
+        </div>
+
     </div>
     <div class="text-center bottom-pagination ">
         <nav>
@@ -141,5 +147,6 @@
     {{ HTML::script('bower/jquery-ui/jquery-ui.js') }}
     {{ HTML::script('js/sites/homepage.js') }}
     {{ HTML::script('js/sites/page_menu.js') }}
+    {{ HTML::script('js/sites/product_comment.js') }}
 @endsection
 

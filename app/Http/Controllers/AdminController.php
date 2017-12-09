@@ -4,9 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use session;
+use App\Models\Product;
 
 class AdminController extends Controller
 {
+//
+//    protected $produces;
+//
+//    public function __construct(
+//        Product $produces
+//    )
+//    {
+//        $this->produces = $produces;
+//    }
+
     public function home()
     {
         // if (Auth::check()) {
@@ -23,6 +35,20 @@ class AdminController extends Controller
     public function manage_food()
     {
         return view('admin.manage_food');
+    }
+
+    public function post_products(Request $request)
+    {
+        $produces = new Product();
+        $produces->name = $request->name;
+        $produces->price = $request->price;
+//        $produces->category = $request->category;
+        $produces->description = $request->description;
+        $produces->avatar = $request->avatar;
+        $produces->save();
+
+        return redirect()->back();
+
     }
 
     public function manage_drink()

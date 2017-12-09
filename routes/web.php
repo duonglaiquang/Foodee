@@ -60,4 +60,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('manage_food', 'AdminController@manage_food')->name('manage_food');
     Route::get('manage_drink', 'AdminController@manage_drink')->name('manage_drink');
     Route::get('manage_customer', 'AdminController@manage_customer');
+    Route::post('postProducts','AdminController@post_products')->name('postProducts');
 });
+Route::get('addcomment','ProductController@postcomment')->name('addComment');
+//Route::get('getcomment','ProductController@getcomment')->name('getcomment');

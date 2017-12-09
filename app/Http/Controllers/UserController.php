@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\DB;
 use Response;
 use Validator;
 
+
 class UserController extends Controller
 {
     protected $information;

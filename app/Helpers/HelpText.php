@@ -18,4 +18,5 @@ class HelpText
             unlink($path);
         }
     }
+
 }
