@@ -6,8 +6,6 @@
 @endsection
 
 @section('content')
-
-@section('content')
     <div class="nastv-icon">
         <a href="#" class="navicon"></a>
         <div class="toggle">

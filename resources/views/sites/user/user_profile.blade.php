@@ -1,5 +1,6 @@
 @extends('layouts.menu')
 @section('style')
+    <title>Profile</title>
     {{ HTML::style('css/sites/profile.css') }}
 @endsection
 
@@ -49,7 +50,6 @@
             </div>
             <div class="row"><!--left col-->
                 <ul class="list-group list-info">
-                    <li class="list-group-item text-center pull">Profile</li>
                     <li class="list-group-item text-right">
                         <span class="pull-left"><strong>Email:</strong></span> {!! Auth::user()->email !!}
                     </li>
@@ -74,13 +74,12 @@
             </div>
         </div>
         <div class="col-sm-8">
-            <div class="title-thongtindonhang">Thong tin don hang</div>
+            <div class="title-thongtindonhang">Purchase History</div>
             <hr>
             <div class="row">
                 <ul class="nav nav-tabs" id="myTab">
-                    <li class="active"><a href="#order-doing" data-toggle="tab">Các đơn hàng đang thực hiện</a></li>
-                    <li><a href="#order-done" data-toggle="tab">Các đơn hàng đã đặt</a></li>
-                    <li><a href="#order-cancel" data-toggle="tab">Các đơn hàng đã hủy</a></li>
+                    <li class="active"><a href="#order-done" data-toggle="tab">All Orders</a></li>
+                    <li><a href="#order-cancel" data-toggle="tab">Orders Canceled</a></li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="order-doing">

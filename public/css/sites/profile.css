@@ -2,10 +2,20 @@
     margin-right: 35px;
 }
 
+a:hover {
+    color: black !important;
+}
+
+body {
+    background: whitesmoke !important;
+}
+
 .img-responsive {
     border-radius: 50%;
-    width: 300px !important;
-    height: 250px !important;
+    width: 150px !important;
+    height: 150px !important;
+    margin: auto;
+    margin-top: 5%;
 }
 
 /*.img-avata-icon .edit-icon {*/
@@ -25,12 +35,12 @@
 }
 
 .fullname h2 {
-    color: red;
     text-align: center;
     text-transform: uppercase;
     margin-top: 15px;
     margin-bottom: 10px;
-    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 1.2em;
 }
 
 .background_user {
@@ -104,6 +114,7 @@
 .edit {
     margin-bottom: 25px;
 }
+
 /*Modal avatar*/
 
 .modal-content {
