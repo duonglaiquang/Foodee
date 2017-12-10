@@ -297,5 +297,4 @@
 @endsection
 
 @section('script')
-    {{ HTML::script('js/sites/homepage.js') }}
 @endsection

@@ -231,7 +231,9 @@
 @endsection
 
 @section('script')
-    {{ HTML::script('bower/bootbox/bootbox.js') }}
+    {{ HTML::script('bower/jquery-1.12.4/index.js')}}
+    {{ HTML::script('js/sites/page_menu.js') }}
+    {{ HTML::script('bower/jquery-ui/jquery-ui.js') }}
     <script>
         $('#cash').prop('checked', true);
         $card=$('#card');

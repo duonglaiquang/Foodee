@@ -55,7 +55,7 @@
                                 <th>Quantity</th>
                                 <th class="text-center">Price</th>
                                 <th class="text-center">Subtotal</th>
-                                <th> </th>
+                                <th></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -145,6 +145,6 @@
 @endsection
 
 @section('script')
-{{ HTML::script('js/sites/cart.js') }}
-{{ HTML::script('bower/bootbox/bootbox.js') }}
+    {{ HTML::script('js/sites/cart.js') }}
+    {{ HTML::script('bower/bootbox/bootbox.js') }}
 @endsection

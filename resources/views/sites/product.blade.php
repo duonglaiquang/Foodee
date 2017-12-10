@@ -142,28 +142,29 @@
                 <form id="postComment" action="{{route('addComment')}}" method="get">
                     <input type="hidden" id="product_1" name="product_1" value="{{$prd_detail->id}}">
                     <div class="comment-box">
-                        <div class="well well-sm" style="background: whitesmoke !important;">
-                            <div class="commentlb">What do you think abour our product ?</div>
-                            <div class="text-right">
-                                <a style="font-size: 1em" class="btn btn-success btn-green" href="#reviews-anchor"
-                                   id="open-review-box">Leave a
-                                    Review</a>
+                        <div class="well well-sm" style="background: whitesmoke !important;min-height: 60px">
+                            <div style="width: 80%;margin: auto;text-align: center;">
+                                <a style="font-size: 1em;width: 100%" class="btn btn-success btn-green review"
+                                   href="#reviews-anchor"
+                                   id="open-review-box">Leave Your Review Here</a>
                             </div>
-
                             <div class="row" id="post-review-box" style="display:none;">
                                 <div class="col-md-12">
                                     <form accept-charset="UTF-8" action="" method="post">
                                         <input id="ratings-hidden" name="rating" type="hidden">
                                         <textarea class="form-control animated" cols="50" id="comment_text"
                                                   name="comment_text"
-                                                  placeholder="Enter your review here..." rows="3" style="resize: none"></textarea>
+                                                  placeholder="Enter your review here..." rows="3" required
+                                                  style="resize: none;overflow:hidden;font-size: 17px;"></textarea>
 
                                         <div class="text-right">
-                                            <div class="stars starrr" data-rating="0"></div>
-                                            <a class="btn btn-danger btn-sm" href="#" id="close-review-box"
-                                               style="display:none; margin-right: 10px;">
-                                                <span class="glyphicon glyphicon-remove"></span>Cancel</a>
-                                            <button class="btn btn-success btn-lg" type="submit">Save</button>
+                                            <div class="stars starrr" data-rating="0" style="margin:5px;"></div>
+                                            <button class="btn btn-danger btn-md" href="#" id="close-review-box"
+                                                    style="display:none; margin-right: 10px;">Cancel
+                                            </button>
+                                            <button class="btn btn-success btn-md" type="submit"
+                                                    style="margin-right: 5px;">Save
+                                            </button>
                                         </div>
                                     </form>
                                 </div>
@@ -210,5 +211,6 @@
     {{ HTML::script('/bower/bootstrap-star-rating/js/locales/LANG.js')}}
     {{ HTML::script('/bower/bootstrap-star-rating/themes/krajee-svg/theme.js')}}
     {{ HTML::script('/js/sites/product_comment.js',['type' => 'text/javascript'])}}
+
 @endsection
 

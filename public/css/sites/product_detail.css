@@ -621,7 +621,7 @@ a:hover {
 
 /*starrr*/
 .starr {
-    margin-top: -10px;
+    margin-top: 5px;
     margin-bottom: 20px;
 }
 
@@ -629,10 +629,17 @@ a:hover {
     font-size: 55%;
 }
 
-.commentlb{
+.cmt-lb {
     float: left;
     font-size: 1.2em;
     margin: 8px 0 0 70px;
+    width: 52%;
+}
+
+.cmt-right {
+    text-align: right;
+    width: 30%;
+    float: right;
 }
 
 .animated {
@@ -642,8 +649,71 @@ a:hover {
 }
 
 .comment-box {
-    width: 50%;
+    width: 52%;
     margin: auto;
     margin-top: 50px;
+    margin-bottom: 50px;
+    height: max-content;
 }
 
+.text-right .glyphicon {
+    font-size: 30px !important;
+}
+
+.starr .btn {
+    font-size: 17px !important;
+}
+
+#review-box {
+    width: 70%;
+    float: none;
+    margin: auto;
+}
+
+.review-block {
+    background-color: #FAFAFA;
+    border: 1px solid #EFEFEF;
+    padding: 10px;
+    border-radius: 3px;
+    margin-bottom: 15px;
+}
+
+.review-block .col-sm-3 {
+    text-align: center;
+}
+
+#sm7-comment .col-sm-3 {
+    width: auto;
+    margin-left: 50px;
+    padding-right: 70px;
+}
+
+.img-rounded {
+    height: 50px;
+    width: 50px;
+}
+
+.review-block-name {
+    font-size: 12px;
+    margin: 10px 0;
+}
+
+.star .glyphicon {
+    font-size: 29px !important;
+}
+
+#review-box .fa {
+    font-size: 30px !important;
+}
+
+.rating-container {
+    margin-top: -15px;
+}
+
+.caption {
+    margin-top: 6px !important;
+}
+
+.wrapper .caption {
+    margin-bottom: 8px !important;
+}

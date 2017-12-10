@@ -24,10 +24,10 @@
     {{ HTML::script('bower/jquery/dist/jquery.js') }}
     {{ HTML::script('bower/bootstrap/dist/js/bootstrap.js') }}
     {{ HTML::script('bower/vue2-filters/dist/vue2-filters.js') }}
-    {{ HTML::script('bower/jquery-1.12.4/index.js')}}
+    {{--{{ HTML::script('bower/jquery-1.12.4/index.js')}}--}}
     {{ HTML::script('bower/jquery-ui/jquery-ui.js') }}
     {{ HTML::script('js/sites/homepage.js') }}
-    {{ HTML::script('js/sites/page_menu.js') }}
+    {{--{{ HTML::script('js/sites/page_menu.js') }}--}}
     <script>
         $(document).ready(function () {
             $('#logout-1').on('click', function () {

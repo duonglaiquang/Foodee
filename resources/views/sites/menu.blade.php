@@ -9,7 +9,7 @@
         <div class="toggle">
             <ul class="toggle-menu">
                 @if (Auth::guest())
-                        <li><a href="{{route('home')}}">Home</a></li>
+                    <li><a href="{{route('home')}}">Home</a></li>
                     <li><a class="active" href="{{route('menu')}}">Menu</a></li>
                     <li><a href="{{ route('login') }}">Login</a></li>
                     <li><a href="{{ route('register') }}">Register</a></li>
@@ -44,7 +44,7 @@
                     <div class="container">
                         <div class="row fix-height-menu">
                             <section id="projects">
-                                <div class="row fix-height-menu" >
+                                <div class="row fix-height-menu">
                                     <div class="thumbex" v-for="food in foods">
                                         <div class="thumbnail">
                                             <a v-bind:href="'../product/'+food.id">
@@ -85,11 +85,12 @@
             <div>
                 <div id="work" class="page">
                     <div class="container">
-                        <div class="row fix-height-menu" >
+                        <div class="row fix-height-menu">
                             <section id="projects">
                                 <div class="container">
                                     <div class="thumbex" v-for="drink in drinks">
-                                        <div class="thumbnail"><a v-bind:href="'../product/'+drink.id"> <img v-bind:src="url+drink.avatar"/><span>@{{ drink.name }}</span></a>
+                                        <div class="thumbnail"><a v-bind:href="'../product/'+drink.id"> <img
+                                                        v-bind:src="url+drink.avatar"/><span>@{{ drink.name }}</span></a>
                                         </div>
                                     </div>
                                 </div>
@@ -118,7 +119,7 @@
                 </div>
             </div>
         </div>
-    </div>   
+    </div>
     <div id="about" class="page-alternate">
         <div class="container">
             <div class="row">
@@ -136,58 +137,60 @@
                         Praesent porta, purus eget sagittis imperdiet, nulla mi ullamcorper metus, id hendrerit metus
                         diam vitae est. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
                         himenaeos.</p>
+                </div>
+                <div class="span4 profile">
+                    <div class="image-wrap">
+                        <div class="hover-wrap">
+                            <span class="overlay-img"></span>
+                            <span class="overlay-text-thumb">Creative Director</span>
+                        </div>
+                        <img src="../img/cherf2.jpg" alt="Jane Helf">
                     </div>
-                    <div class="span4 profile">
-                        <div class="image-wrap">
-                            <div class="hover-wrap">
-                                <span class="overlay-img"></span>
-                                <span class="overlay-text-thumb">Creative Director</span>
-                            </div>
-                            <img src="../img/cherf2.jpg" alt="Jane Helf">
-                        </div>
-                        <h3 class="profile-name">Jane Helf</h3>
-                        <p class="profile-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac
-                            augue at erat <a href="#">hendrerit dictum</a>.
-                            Praesent porta, purus eget sagittis imperdiet, nulla mi ullamcorper metus, id hendrerit metus
-                            diam vitae est. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
-                            himenaeos.</p>
-                            <div class="social">
-                                <ul class="social-icons">
-                                    <li><a href="#"><i class="font-icon-social-twitter"></i></a></li>
-                                    <li><a href="#"><i class="font-icon-social-email"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="span4 profile">
-                            <div class="image-wrap">
-                                <div class="hover-wrap">
-                                    <span class="overlay-img"></span>
-                                    <span class="overlay-text-thumb">Lead Designer</span>
-                                </div>
-                                <img src="../img/cherf6.jpg" alt="Joshua Insanus">
-                            </div>
-                            <h3 class="profile-name">Joshua Insanus</h3>
-                            <p class="profile-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac
-                                augue at erat <a href="#">hendrerit dictum</a>.
-                                Praesent porta, purus eget sagittis imperdiet, nulla mi ullamcorper metus, id hendrerit metus
-                                diam vitae est. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
-                                himenaeos.</p>
-                                <div class="social">
-                                    <ul class="social-icons">
-                                        <li><a href="#"><i class="font-icon-social-twitter"></i></a></li>
-                                        <li><a href="#"><i class="font-icon-social-linkedin"></i></a></li>
-                                        <li><a href="#"><i class="font-icon-social-google-plus"></i></a></li>
-                                        <li><a href="#"><i class="font-icon-social-vimeo"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                    <h3 class="profile-name">Jane Helf</h3>
+                    <p class="profile-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac
+                        augue at erat <a href="#">hendrerit dictum</a>.
+                        Praesent porta, purus eget sagittis imperdiet, nulla mi ullamcorper metus, id hendrerit metus
+                        diam vitae est. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+                        himenaeos.</p>
+                    <div class="social">
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="font-icon-social-twitter"></i></a></li>
+                            <li><a href="#"><i class="font-icon-social-email"></i></a></li>
+                        </ul>
                     </div>
                 </div>
+                <div class="span4 profile">
+                    <div class="image-wrap">
+                        <div class="hover-wrap">
+                            <span class="overlay-img"></span>
+                            <span class="overlay-text-thumb">Lead Designer</span>
+                        </div>
+                        <img src="../img/cherf6.jpg" alt="Joshua Insanus">
+                    </div>
+                    <h3 class="profile-name">Joshua Insanus</h3>
+                    <p class="profile-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac
+                        augue at erat <a href="#">hendrerit dictum</a>.
+                        Praesent porta, purus eget sagittis imperdiet, nulla mi ullamcorper metus, id hendrerit metus
+                        diam vitae est. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+                        himenaeos.</p>
+                    <div class="social">
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="font-icon-social-twitter"></i></a></li>
+                            <li><a href="#"><i class="font-icon-social-linkedin"></i></a></li>
+                            <li><a href="#"><i class="font-icon-social-google-plus"></i></a></li>
+                            <li><a href="#"><i class="font-icon-social-vimeo"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     @include('sections.menu.footer')
 @endsection
 
 @section('script')
-
+    {{ HTML::script('bower/jquery-1.12.4/index.js')}}
+    {{ HTML::script('js/sites/page_menu.js') }}
+    {{ HTML::script('bower/jquery-ui/jquery-ui.js') }}
 @endsection
 
