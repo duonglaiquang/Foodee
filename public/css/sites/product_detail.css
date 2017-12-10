@@ -618,6 +618,7 @@ a:hover {
 #aaa {
     padding-top: 58% !important;
 }
+
 /*starrr*/
 .starr {
     margin-top: -10px;
@@ -627,3 +628,22 @@ a:hover {
 .starr i {
     font-size: 55%;
 }
+
+.commentlb{
+    float: left;
+    font-size: 1.2em;
+    margin: 8px 0 0 70px;
+}
+
+.animated {
+    -webkit-transition: height 0.2s;
+    -moz-transition: height 0.2s;
+    transition: height 0.2s;
+}
+
+.comment-box {
+    width: 50%;
+    margin: auto;
+    margin-top: 50px;
+}
+
