@@ -27,11 +27,11 @@ $('.remove').click(function (e) {
 function calculator() {
     var amt = $('.amount'),
         tot = $('#total');
-    console.log(amt);
     amt.text(function () {
         var tr = $(this).closest('tr');
         var qty = tr.find('.qty').val();
-        var price = $('.price').text().substr(1);
+        var price = tr.find('.price').text().substr(1);
+        console.log(price);
         return parseFloat(qty) * parseFloat(price);
     });
     tot.text(function () {

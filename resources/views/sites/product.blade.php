@@ -36,7 +36,7 @@
                 @endif
             </ul>
         </div>
-    </div>
+    </div>  
     @include('sections.menu.header')
 
     <div class="container">
@@ -211,6 +211,8 @@
     {{ HTML::script('/bower/bootstrap-star-rating/js/locales/LANG.js')}}
     {{ HTML::script('/bower/bootstrap-star-rating/themes/krajee-svg/theme.js')}}
     {{ HTML::script('/js/sites/product_comment.js',['type' => 'text/javascript'])}}
-
+    {{ HTML::script('bower/jquery-1.12.4/index.js')}}
+    {{ HTML::script('bower/jquery-ui/jquery-ui.js') }}
+    {{ HTML::script('js/sites/page_menu.js') }}
 @endsection
 

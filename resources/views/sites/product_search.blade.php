@@ -42,7 +42,7 @@
                     @foreach($product as $prd)
                         <div class="thumbex">
                             <div class="thumbnail">
-                                <a href="'../product/{{$prd->id}}'">
+                                <a href="../product/{{$prd->id}}">
                                     <img src="../img/{{$prd->avatar}}"/>
                                     <span>{{ $prd->name }}</span>
                                 </a>
@@ -77,7 +77,10 @@
 
 @include('sections.menu.footer')
 @endsection
-
+    
 @section('script')
+    {{ HTML::script('bower/jquery-1.12.4/index.js')}}
+    {{ HTML::script('bower/jquery-ui/jquery-ui.js') }}
+    {{ HTML::script('js/sites/page_menu.js') }}
 @endsection
 
