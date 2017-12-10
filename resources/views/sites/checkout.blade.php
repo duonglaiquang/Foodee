@@ -161,7 +161,7 @@
                         </div>
                         <!--SHIPPING METHOD END-->
                         <!--CREDIT CART PAYMENT-->
-                        <div class="panel panel-info" style="display: none">
+                        <div class="panel panel-info" id="credit-card" style="display: none">
                             <div class="panel-heading"><span><i class="glyphicon glyphicon-lock"></i></span> Secure
                                 Payment
                             </div>
@@ -276,7 +276,12 @@
                 $box.prop("checked", false);
             }
 
-            
+            var $card=$("#card");
+            if($card.is(":checked")){
+
+            }
+
+
         });
 
 

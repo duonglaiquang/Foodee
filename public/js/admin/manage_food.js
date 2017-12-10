@@ -1,10 +1,13 @@
-<<<<<<< HEAD
+Vue.filter('currency', function (value) {
+    return (value / 1000).toFixed(3)
+});
 var manage_food = new Vue({
     el: '#manage_food',
     data: {
         foods: [],
         item_food: {'name': '', 'price': '', 'description': '',},
         new_food: {'name': '', 'price': '', 'description': '', 'category': '',},
+        url: "http://localhost:8000/img/",
     },
     computed: {},
     mounted: function () {
@@ -13,27 +16,6 @@ var manage_food = new Vue({
     methods: {
         show_food: function () {
             var authOptions = {
-=======
-Vue.filter('currency', function (value) {
-        return (value/1000).toFixed(3)
-});
-var manage_food = new Vue	({
-	el:'#manage_food',
-	data : {
-		foods:[],
-		item_food:{'name':'','price':'','description':'',},
-		new_food:{'name':'','price':'','description':'','category':'',},
-        url:"http://localhost:8000/img/",
-	},
-	computed: {
-	},
-	mounted :function(){
-		this.show_food();
-	},
-	methods: {
-		show_food :function(){
-			var authOptions = {
->>>>>>> 3d474a27802ece00783087124264701faaa35fd7
                 method: 'get',
                 url: '/api/v1/all_foods',
                 json: true,
@@ -107,8 +89,6 @@ var manage_food = new Vue	({
             ;
             // console.log('hihi')
         },
-
-
     }
 
 })
