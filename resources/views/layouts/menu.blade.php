@@ -2,35 +2,39 @@
 <HTML lang="en">
 <head>
     <meta charset="UTF-8">
-    {{ HTML::style('bower/bootstrap/dist/css/bootstrap.css') }}
-    {{ HTML::style('bower/owl.carousel/dist/assets/owl.carousel.css') }}
-    {{ HTML::style('bower/owl.carousel/dist/assets/owl.theme.default.css') }}
-    {{ HTML::style('bower/owl.carousel/dist/assets/owl.theme.default.css') }}
-    {{ HTML::style('bower/font-awesome/css/font-awesome.min.css') }}
-    {{ HTML::style('css/sites/homepage.css') }}
-    {{ HTML::style('css/sites/menu.css') }}
-    {{ HTML::style('css/sites/reset.css') }}
-    {{--{{ HTML::style('bower/Open-sans/open-sans.css') }}--}}
+    {{ HTML::style('/bower/bootstrap/dist/css/bootstrap.css') }}
+    {{ HTML::style('/bower/owl.carousel/dist/assets/owl.carousel.css') }}
+    {{ HTML::style('/bower/owl.carousel/dist/assets/owl.theme.default.css') }}
+    {{ HTML::style('/bower/owl.carousel/dist/assets/owl.theme.default.css') }}
+    {{ HTML::style('/bower/font-awesome/css/font-awesome.min.css') }}
+    {{ HTML::style('/css/sites/homepage.css') }}
+    {{ HTML::style('/css/sites/menu.css') }}
+    {{ HTML::style('/css/sites/reset.css') }}
+    {{ HTML::style('bower/jquery-ui/themes/base/jquery-ui.css') }}
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Tangerine">
     @yield('style')
 </head>
 <body>
-<div class="container-fluid fix-width" id="content_menu">
-    @yield('content')
-</div>
-{{ HTML::script("bower/vue/dist/vue.js") }}
-{{ HTML::script("bower/axios/dist/axios.min.js") }}
-{{ HTML::script('bower/jquery/dist/jquery.js') }}
-{{ HTML::script('bower/bootstrap/dist/js/bootstrap.js') }}
-{{ HTML::script('bower/vue2-filters/dist/vue2-filters.js') }}
-<script>
-    $(document).ready(function () {
-        $('#logout-1').on('click', function () {
-            $('#logout-form').submit();
+    <div class="container-fluid fix-width"  id="content_menu">
+        @yield('content')
+    </div>
+    {{ HTML::script("bower/vue/dist/vue.js") }}    
+    {{ HTML::script("bower/axios/dist/axios.min.js") }}    
+    {{ HTML::script('bower/jquery/dist/jquery.js') }}
+    {{ HTML::script('bower/bootstrap/dist/js/bootstrap.js') }}
+    {{ HTML::script('bower/vue2-filters/dist/vue2-filters.js') }}
+    {{ HTML::script('bower/jquery-1.12.4/index.js')}}
+    {{ HTML::script('bower/jquery-ui/jquery-ui.js') }}
+    {{ HTML::script('js/sites/homepage.js') }}
+    {{ HTML::script('js/sites/page_menu.js') }}
+    <script>
+        $(document).ready(function () {
+            $('#logout-1').on('click', function () {
+                $('#logout-form').submit();
+            });
         });
-    });
-</script>
+    </script>
 @yield('script')
 </body>
 </HTML>

@@ -46,13 +46,13 @@ class ProductController extends Controller
 
     public function getdata_food()
     {
-        $food = Product::where('category', '=', 'Food')->paginate(12);
+        $food = Product::where('category', '=', 'Food')->paginate(30);
         return Response::json($food);
     }
 
     public function getdata_drink()
     {
-        $drink = Product::where('category', '=', 'Drink')->paginate(12);
+        $drink = Product::where('category', '=', 'Drink')->paginate(30);
         return Response::json($drink);
     }
 

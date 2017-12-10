@@ -29,24 +29,55 @@
             </li>
         </ul>
     </div>
-
 </div>
 
 @include('sections.menu.header')
-
 <div>
-    @foreach($product as $prd) 
-    <div>
-       {{ $prd->name }}
+
+    <div id="work" class="page">
+        <div class="container">
+            <div class="row fix-height-menu">
+                <section id="projects">
+                    <div class="row fix-height-menu" >
+                    @foreach($product as $prd)
+                        <div class="thumbex">
+                            <div class="thumbnail">
+                                <a href="'../product/{{$prd->id}}'">
+                                    <img src="../img/{{$prd->avatar}}"/>
+                                    <span>{{ $prd->name }}</span>
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
+                    </div>
+                </section>
+            </div>
+        </div>
     </div>
-    @endforeach
-    
+    <div class="text-center bottom-pagination ">
+        <nav>
+            <ul class="pagination">
+                <li>
+                    <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+                <li v-for="pageNo in last_page_food "><a @click="show_food(pageNo)">@{{ pageNo }}</a></li>
+                <li>
+                    <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
 </div>
 
 @include('sections.menu.footer')
 @endsection
 
 @section('script')
-{{ HTML::script('js/sites/homepage.js') }}
 @endsection
 

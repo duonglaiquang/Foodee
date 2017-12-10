@@ -205,7 +205,6 @@
 @endsection
 
 @section('script')
-    {{ HTML::script('/js/sites/homepage.js') }}
     {{ HTML::script('/js/sites/product_detail.js') }}
     {{ HTML::script('/js/sites/star-rating.js')}}
     {{ HTML::script('/bower/bootstrap-star-rating/js/locales/LANG.js')}}

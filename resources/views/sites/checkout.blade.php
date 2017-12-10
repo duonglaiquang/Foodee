@@ -231,7 +231,6 @@
 @endsection
 
 @section('script')
-    {{ HTML::script('js/sites/homepage.js') }}
     {{ HTML::script('bower/bootbox/bootbox.js') }}
     <script>
         $('#cash').prop('checked', true);
