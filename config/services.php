@@ -20,7 +20,7 @@ return [
     ],
 
     'ses' => [
-        'key' => env('SES_KEY'),
+        'key'    => env('SES_KEY'),
         'secret' => env('SES_SECRET'),
         'region' => 'us-east-1',
     ],
@@ -29,15 +29,15 @@ return [
         'secret' => env('SPARKPOST_SECRET'),
     ],
 
-    'stripe' => [
-        'model' => App\User::class,
-        'key' => env('STRIPE_KEY'),
+    'stripe'   => [
+        'model'  => App\Models\User::class,
+        'key'    => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
     'facebook' => [
-        'client_id' => '287679465050563',
+        'client_id'     => '287679465050563',
         'client_secret' => '858d76f21861087478d9dd5125cd14f5',
-        'redirect' => 'http://localhost:8000/login/facebook/callback',
+        'redirect'      => 'http://localhost:8000/login/facebook/callback',
     ],
 
 ];

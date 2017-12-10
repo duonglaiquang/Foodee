@@ -145,11 +145,23 @@
                                     <div class="col-md-12"><input type="text" name="email" class="form-control"
                                                                   value="{{$user->email}}" readonly="readonly"/></div>
                                 </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-12"><strong>Payment Method:</strong></div>
+                                    <div class="col-md-12">
+                                        <label>
+                                            <input type="checkbox" class="radio" id="cash" value="1"
+                                            />Cash</label>
+                                        <label style="margin-left: 20px">
+                                            <input type="checkbox" class="radio" id="card" value="2"/>Credit
+                                            Card</label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <!--SHIPPING METHOD END-->
                         <!--CREDIT CART PAYMENT-->
-                        <div class="panel panel-info">
+                        <div class="panel panel-info" style="display: none">
                             <div class="panel-heading"><span><i class="glyphicon glyphicon-lock"></i></span> Secure
                                 Payment
                             </div>
@@ -248,5 +260,27 @@
 @section('script')
     {{ HTML::script('js/sites/homepage.js') }}
     {{ HTML::script('bower/bootbox/bootbox.js') }}
+    <script>
+        $("input:checkbox").on('click', function () {
+            // in the handler, 'this' refers to the box clicked on
+            var $box = $(this);
+            if ($box.is(":checked")) {
+                // the name of the box is retrieved using the .attr() method
+                // as it is assumed and expected to be immutable
+                var group = "input:checkbox[name='" + $box.attr("name") + "']";
+                // the checked state of the group/box on the other hand will change
+                // and the current value is retrieved using .prop() method
+                $(group).prop("checked", false);
+                $box.prop("checked", true);
+            } else {
+                $box.prop("checked", false);
+            }
+
+            
+        });
+
+
+
+    </script>
 @endsection
 

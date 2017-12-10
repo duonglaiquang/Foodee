@@ -10,6 +10,7 @@ use App\Models\User;
 use Auth;
 use Hash;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Response;
 use Validator;
 
@@ -36,16 +37,14 @@ class UserController extends Controller
     public function profile(Request $request)
     {
         $users = User::find($request->id);
-        // $order = $this->order->where('user_id', '=', $users->id)
-        //     ->orderBy('id','desc')->get();
-        // // $orderDetail = $this->orderDetail->first();
-        // // $productDetail = $this->product->where('id', '=', $orderDetail->product_id)
-        // //     ->first();
+        $orders = Order::where('user_id', '=', $users->id)->orderBy('created_at', 'desc')->get();
+        $products = DB::table('products')->join('order_details', 'products.id', '=', 'order_details.product_id')
+            ->distinct()
+            ->get();
 
-        $orders = Order::where('user_id', '=', $users->id)->get();
         $count = $orders->count();
 
-        return view('sites.user.user_profile', compact('users', 'orders', 'count'));
+        return view('sites.user.user_profile', compact('users', 'orders', 'count', 'products'));
     }
 
     public function editProfile(Request $request)

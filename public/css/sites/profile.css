@@ -1,5 +1,6 @@
 .sidebar {
-    margin-right: 35px;
+    margin-right: 25px;
+    margin-left: 25px;
 }
 
 a:hover {
@@ -32,6 +33,7 @@ body {
     margin-top: -30px;
     margin-bottom: 30px;
     text-transform: capitalize;
+    cursor: pointer;
 }
 
 .fullname h2 {
@@ -79,6 +81,13 @@ body {
 
 td {
     text-align: center;
+    font-size: 18px !important;
+    vertical-align: middle !important;
+}
+
+.table thead tr th {
+    font-size: 17px !important;
+    font-weight: bold !important;
 }
 
 .glyphicon {
@@ -102,14 +111,18 @@ td {
     color: #424040;
     text-align: center;
     font-size: 35px;
-    text-shadow: 0px 5px 4px #9c8a8a;
+    font-weight: bold;
     margin-top: 33px;
     border-bottom: 2px solid #333;
     padding-bottom: 10px;
 }
 
-.list-info {
-    box-shadow: 2px 4px 2px -2px #333;
+.list-group-item {
+    background: whitesmoke !important;
+}
+
+.pull-left {
+    padding-right: 10px;
 }
 
 .pull-left {
@@ -127,11 +140,10 @@ td {
 /*Modal avatar*/
 
 .modal-content {
-    background-color: #f0ad4e;
+    background-color: whitesmoke;
 }
 
 .modal-header h4 {
-    color: #0d6aad;
     text-transform: capitalize;
     font-weight: 900;
 }
@@ -204,6 +216,41 @@ td {
     height: 450px;
     position: relative;
     z-index: 2;
-    border-radius: 0 20px 20px 20px;
+    border-radius: 20px 20px 20px 20px;
     box-shadow: 0 -2px 3px -2px rgba(0, 0, 0, .5);
+}
+
+#submit_photo {
+    font-size: 1.2em;
+}
+
+.edit-icon a {
+    color: white;
+}
+
+.media-object {
+    width: 150px;
+    height: 150px;
+    float: left;
+}
+
+.media-body {
+    width: 265px !important;
+    padding-top: 19% !important;
+}
+
+.modal-header {
+    text-align: center;
+    font-size: 1.3em !important;
+}
+
+.modal-body label {
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+
+@media (min-width: 768px) {
+    .order {
+        width: 45% !important;
+    }
 }

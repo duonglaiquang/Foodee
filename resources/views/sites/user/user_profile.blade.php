@@ -67,12 +67,13 @@
                     </li>
                 </ul>
             </div><!--/col-3-->
-            <div class="row edit">
+            <div class="row edit" style="text-align: center">
                 <a href="javascript:void(0)" data-toggle="modal" data-target="#modalProfile">
-                    (<i class="fa fa-pencil"></i> {{ __('Edit Profile') }})
+                    (<i class="fa fa-pencil"></i> {{ __('Update Profile') }})
                 </a>
-                <a href="javascript:void(0)" class="text-center" data-toggle="modal" data-target="#modalPassword">
-                    (<i class="fa fa-pencil"></i> {{ __('Edit Password') }})
+                <a href="javascript:void(0)" class="text-center" data-toggle="modal" data-target="#modalPassword"
+                   style="margin-left: 5px;">
+                    (<i class="fa fa-pencil"></i> {{ __('Change Password') }})
                 </a>
             </div>
         </div>
@@ -80,10 +81,6 @@
             <div class="title-thongtindonhang">Purchase History</div>
             <hr>
             <div class="row">
-                <ul id="tabs">
-                    <li><a href="#" name="tab1">All Orders</a></li>
-                    <li><a href="#" name="tab2">Canceled Orders</a></li>
-                </ul>
 
                 <div id="content">
                     <div id="tab1">
@@ -91,23 +88,22 @@
                             <table class="table table-hover">
                                 <thead>
                                 <tr>
+                                    <th class="text-center weight-title">Order No.</th>
                                     <th class="text-center weight-title">Time</th>
-                                    <th class="text-center weight-title">Order</th>
                                     <th class="text-center weight-title">Products</th>
                                     <th class="text-center weight-title">Total</th>
-                                    <th class="text-center weight-title">Status</th>
                                     <th class="text-center weight-title">Action</th>
                                 </tr>
                                 </thead>
                                 @foreach($orders as $order)
                                     <tbody id="items">
-                                    <td>{{$order->created_at}}</td>
                                     <td>{{$i++}}</td>
+                                    <td>{{$order->created_at}}</td>
                                     <td>{{$order->product_count}}</td>
                                     <td>${{$order->sum}}</td>
-                                    <td>{{$order->status}}</td>
                                     <td>
-                                        <a href="#">
+                                        <a href="javascript:void(0)" data-toggle="modal" data-target="#modalOrder"
+                                           data-id="{{$order->id}}">
                                             <span class="glyphicon glyphicon-eye-open"></span>
                                         </a>
                                     </td>
@@ -115,37 +111,6 @@
                                 @endforeach
                                 <tr></tr>
                             </table>
-                            <div class="row">
-                                <div class="col-md-6 col-md-offset-4 text-center">
-                                    <ul class="pagination" id="myPager"></ul>
-                                </div>
-                            </div>
-                        </div><!--/table-resp-->
-                        <hr>
-                    </div>
-                    <div id="tab2">
-                        <div class="table-responsive status-order">
-                            <table class="table table-hover">
-                                <thead>
-                                <tr>
-                                    <th class="text-center weight-title">Time</th>
-                                    <th class="text-center weight-title">Order</th>
-                                    <th class="text-center weight-title">Products</th>
-                                    <th class="text-center weight-title">Total</th>
-                                    <th class="text-center weight-title">Status</th>
-                                    <th class="text-center weight-title">Action</th>
-                                </tr>
-                                </thead>
-                                <tbody id="items">
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                </tbody>
-                            </table>
-                            <hr>
                             <div class="row">
                                 <div class="col-md-6 col-md-offset-4 text-center">
                                     <ul class="pagination" id="myPager"></ul>
@@ -215,7 +180,7 @@
                         <div class="form-group col-md-6 col-xs-12">
                             {{ Form::label('name', __('Name:')) }}
                             {{ Form::text('name', Auth::user()->name,
-                                [ 'class' => 'form-control display_name' ])
+                                [ 'class' => 'form-control display_name',     'required' => 'required', ])
                             }}
                         </div>
                         <div class="form-group col-md-4 col-xs-12">
@@ -234,17 +199,17 @@
                     <div class="row">
                         <div class="form-group col-md-4 col-xs-12">
                             {{ Form::label('date_of_birth', __('Birthday:')) }}
-                            {{ Form::date('date_of_birth', Auth::user()->date_of_birth, [ 'class' => 'form-control date_of_birth' ]) }}
+                            {{ Form::date('date_of_birth', Auth::user()->date_of_birth, [ 'class' => 'form-control date_of_birth',     'required' => 'required', ]) }}
                         </div>
                         <div class="form-group col-md-4 col-xs-12">
                             {{ Form::label('phone', __('Phone:')) }}
-                            {{ Form::text('phone', Auth::user()->phone, [ 'class' => 'form-control phone' ]) }}
+                            {{ Form::text('phone', Auth::user()->phone, [ 'class' => 'form-control phone',     'required' => 'required', ]) }}
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-6 col-xs-12">
                             {{ Form::label('address', __('Address:')) }}
-                            {{ Form::text('address', Auth::user()->address, [ 'class' => 'form-control address' ]) }}
+                            {{ Form::text('address', Auth::user()->address, [ 'class' => 'form-control address',     'required' => 'required', ]) }}
                         </div>
                     </div>
                 </div>
@@ -273,7 +238,8 @@
                             {{ Form::password('old_password',
                                 [
                                 'class' => 'form-control',
-                                'placeholder' => 'enter old password'
+                                'placeholder' => 'enter old password',
+                                'required' => 'required',
                                 ]
                             ) }}
                         </div>
@@ -282,7 +248,8 @@
                             {{ Form::password('new_password',
                                 [
                                 'class' => 'form-control',
-                                'placeholder' => 'enter new password'
+                                'placeholder' => 'enter new password',
+                                'required' => 'required',
                                 ]
                             ) }}
                         </div>
@@ -291,7 +258,8 @@
                             {{ Form::password('confirm',
                                 [
                                 'class' => 'form-control',
-                                'placeholder' => 'confirm'
+                                'placeholder' => 'confirm',
+                                'required' => 'required',
                                 ]
                             ) }}
                         </div>
@@ -305,30 +273,60 @@
         </div>
     </div>
     {{--<!-- //end dialog edit password-->--}}
+
+
+    <div id="modalOrder" class="modal fade" role="dialog">
+        <div class="modal-dialog order">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    {{ Form::button('x', [ 'class' => 'close', 'data-dismiss' => 'modal' ]) }}
+                    <h4 class="modal-title">{{ __('order detail') }}</h4>
+                </div>
+                <div class="modal-body" style="padding: 0 15px 15px 15px !important;">
+                    <div class="cart" id="cart">
+                        <table class="table table-hover">
+                            <tbody>
+                            @foreach($products as $product)
+                                <tr>
+                                    <td class="col-sm-8 col-md-6">
+                                        <div class="media">
+                                            <a href={{route('product.detail',$product->id)}}> <img
+                                                        class="media-object"
+                                                        src="{{asset("../img/$product->avatar")}}">
+                                            </a>
+                                            <div class="media-body">
+                                                <h4 class="media-heading"><a
+                                                            href={{route('product.detail',$product->id)}}>{{$product->name}}</a>
+                                                </h4>
+                                                <h5 class="media-heading"> Type : <a
+                                                            href={{route('menu')}}>{{$product->category}}</a>
+                                                </h5>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="col-sm-1 col-md-1 text-center">
+                                        <span class="price">x</span>
+                                    </td>
+                                    <td class="col-sm-1 col-md-1 text-center" style="font-size: 1.3em !important;">
+                                        <span class="price">{{$product->quantity}}</span>
+                                    </td>
+                                    <td class="col-sm-1 col-md-1 text-center" style="font-weight: bold !important;">
+                                        $<span id="amount" class="amount">{{$product->total}}</span>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
     @include('sections.menu.footer')
 @endsection
 
 @section('script')
     {{ HTML::script('js/sites/homepage.js') }}
-    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $("#content").find("[id^='tab']").hide(); // Hide all content
-            $("#tabs li:first").attr("id", "current"); // Activate the first tab
-            $("#content #tab1").fadeIn(); // Show first tab's content
-
-            $('#tabs a').click(function (e) {
-                e.preventDefault();
-                if ($(this).closest("li").attr("id") == "current") { //detection for current tab
-                    return;
-                }
-                else {
-                    $("#content").find("[id^='tab']").hide(); // Hide all content
-                    $("#tabs li").attr("id", ""); //Reset id's
-                    $(this).parent().attr("id", "current"); // Activate this
-                    $('#' + $(this).attr('name')).fadeIn(); // Show content for the current tab
-                }
-            });
-        });
-    </script>
 @endsection

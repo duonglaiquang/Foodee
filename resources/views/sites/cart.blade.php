@@ -1,8 +1,8 @@
 @extends('layouts.menu')
 @section('style')
-<title>Cart</title>
-{{ HTML::style('css/sites/bootstrap-responsive.min.css') }}
-{{ HTML::style('css/sites/cart.css') }}
+    <title>Cart</title>
+    {{ HTML::style('css/sites/bootstrap-responsive.min.css') }}
+    {{ HTML::style('css/sites/cart.css') }}
 @endsection
 
 @section('content')
@@ -28,9 +28,7 @@
                 </li>
             </ul>
         </div>
-
     </div>
-
     @include('sections.menu.header')
     <div style="min-height: 544px">
         @if(Auth::user()->cart == 0)
@@ -62,8 +60,6 @@
                             <form action="{{route('saveCart')}}" method="POST">
                                 {{ csrf_field() }}
                                 @foreach($products as $product)
-                                    <input type="hidden" name="id[]" value="{{$product->id}}">
-
                                     <tr>
                                         <td class="col-sm-8 col-md-6">
                                             <div class="media">
@@ -76,15 +72,16 @@
                                                                 href={{route('product.detail',$product->id)}}>{{$product->name}}</a>
                                                     </h4>
                                                     <h5 class="media-heading"> Type : <a
-                                                                href={{route('menu')}}>{{$product->category}}</a></h5>
+                                                                href={{route('menu')}}>{{$product->category}}</a>
+                                                    </h5>
                                                     <span>Status : </span><span
                                                             class="text-success"><strong>In Stock</strong></span>
                                                 </div>
                                             </div>
                                         </td>
                                         <td class="col-sm-1 col-md-1" style="text-align: center">
-                                            <input type="number" class="qty" name="qty[]" min="1"
-                                                   value={{$product->quantity}} >
+                                            <input type="number" class="qty" name="qty"
+                                                   value={{$product->quantity}}>
                                         </td>
                                         <td class="col-sm-1 col-md-1 text-center">
                                             <span class="price">${{$product->price}}</span>
@@ -93,88 +90,58 @@
                                             $<span id="amount" class="amount">0</span>
                                         </td>
                                         <td class="col-sm-1 col-md-1">
-
-                        @foreach($products as $product)
-                        <tr>
-                            <td class="col-sm-8 col-md-6">
-                                <div class="media">
-                                    <a href={{route('product.detail',$product->id)}}> <img class="media-object"
-                                        src="../img/{{$product->avatar}}">
-                                    </a>
-                                    <div class="media-body">
-                                        <h4 class="media-heading"><a
-                                            href={{route('product.detail',$product->id)}}>{{$product->name}}</a>
-                                        </h4>
-                                        <h5 class="media-heading"> Type : <a
-                                            href={{route('menu')}}>{{$product->category}}</a></h5>
-                                            <span>Status : </span><span
-                                            class="text-success"><strong>In Stock</strong></span>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="col-sm-1 col-md-1" style="text-align: center">
-                                    <input type="number" class="qty" name="qty" value={{$product->quantity}}>
-                                </td>
-                                <td class="col-sm-1 col-md-1 text-center">
-                                    <span class="price">${{$product->price}}</span>
-                                </td>
-                                <td class="col-sm-1 col-md-1 text-center">
-                                    $<span id="amount" class="amount">0</span>
-                                </td>
-                                <td class="col-sm-1 col-md-1">
-
-
-                                    <a class="remove" href={{route('deleteCart',$product->id)}}
-                                        onclick="bootbox.confirm();">
-                                        {{--product->id == cart->id,product->product_id=product->id--}}
-                                        <button data-bb-handler="cancel" type="button" class="btn btn-danger"><i
-                                            class="fa fa-times" style="margin-right: 10px"></i>Remove
-                                        </button>
-                                    </a>
-                                </td>
-                            </tr>
-                            @endforeach
-                            <tr>
-                                <td class="col-sm-8 col-md-6">
-                                    <a href="{{route('menu')}}">
-                                        <button type="button" class="btn btn-warning"
-                                        style="font-size: 18px !important;float: left;">
-                                        <i class="fa fa-angle-left"></i>
-                                        Continue Shopping
-                                    </button>
-                                </a>
-                            </td>
-                            <td class="col-sm-1 col-md-1" style="text-align: center">
-
-                            </td>
-                            <td class="col-sm-1 col-md-1 text-center" style="font-weight: bold">
-                                <h3><strong>Total : </strong></h3>
-                            </td>
-                            <td class="col-sm-1 col-md-1 text-center" style="font-weight: bold">
-                                <h3><strong>$<span id="total" class="total"></span></strong></h3>
-                            </td>
-                            <td class="col-sm-1 col-md-1">
-                                <a href="{{route('checkout')}}">
-                                    <button type="button" class="btn btn-success"
-                                    style="font-size: 18px !important;padding: 5px !important;float: right; margin-right: 15%;">
-                                    Checkout <i class="fa fa-angle-right"></i>
-                                </button>
-                            </a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+                                            <a class="remove" href={{route('deleteCart',$product->id)}}
+                                                    onclick="bootbox.confirm();">
+                                                {{--product->id == cart->id,product->product_id=product->id--}}
+                                                <button data-bb-handler="cancel" type="button"
+                                                        class="btn btn-danger"><i
+                                                            class="fa fa-times" style="margin-right: 10px"></i>Remove
+                                                </button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                                <tr>
+                                    <td class="col-sm-8 col-md-6">
+                                        <a href="{{route('menu')}}">
+                                            <button type="button" class="btn btn-warning"
+                                                    style="font-size: 18px !important;float: left;">
+                                                <i class="fa fa-angle-left"></i>
+                                                Continue Shopping
+                                            </button>
+                                        </a>
+                                    </td>
+                                    <td class="col-sm-1 col-md-1" style="text-align: center">
+                                    </td>
+                                    <td class="col-sm-1 col-md-1 text-center" style="font-weight: bold">
+                                        <h3><strong>Total : </strong></h3>
+                                    </td>
+                                    <td class="col-sm-1 col-md-1 text-center" style="font-weight: bold">
+                                        <h3><strong>$<span id="total" class="total"></span></strong></h3>
+                                    </td>
+                                    <td class="col-sm-1 col-md-1">
+                                        <a href="{{route('checkout')}}">
+                                            <button type="button" class="btn btn-success"
+                                                    style="font-size: 18px !important;padding: 5px !important;float: right; margin-right: 15%;">
+                                                Checkout <i class="fa fa-angle-right"></i>
+                                            </button>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </form>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        @endif
     </div>
-</div>
-@endif
-</div>
-@include('sections.menu.footer')
+    @include('sections.menu.footer')
 @endsection
 
 @section('script')
-{{ HTML::script('js/sites/homepage.js') }}
-{{ HTML::script('js/sites/cart.js') }}
-{{ HTML::script('bower/bootbox/bootbox.js') }}
+    {{ HTML::script('js/sites/homepage.js') }}
+    {{ HTML::script('js/sites/cart.js') }}
+    {{ HTML::script('bower/bootbox/bootbox.js') }}
 @endsection
 

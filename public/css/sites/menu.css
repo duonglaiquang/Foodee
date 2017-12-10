@@ -771,6 +771,14 @@ About Section
     padding: 0px;
 }
 
+.header-first a:hover {
+    color: inherit !important;
+}
+
+a {
+    outline: none !important;
+}
+
 .glyphicon {
     font-size: 35px;
     color: #6d6c6c;
@@ -786,6 +794,10 @@ About Section
 
 #headdddd a:hover {
     color: inherit !important;
+}
+
+a {
+    cursor: pointer;
 }
 
 #footer-main ul {
@@ -1026,6 +1038,7 @@ footer {
 .icon-search {
     position: relative;
 }
+
 /*-- //footer --*/
 
 /*search */
