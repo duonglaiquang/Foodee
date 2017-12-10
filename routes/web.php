@@ -61,7 +61,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('home', 'AdminController@home')->name('admin_home');
     Route::get('manage_food', 'AdminController@manage_food')->name('manage_food');
     Route::get('manage_drink', 'AdminController@manage_drink')->name('manage_drink');
-    Route::get('manage_customer', 'AdminController@manage_customer');
+    Route::get('manage_customer', 'AdminController@manage_customer')->name('manage.customer');
     Route::post('postProducts', 'AdminController@post_products')->name('postProducts');
     Route::get('manage_order', 'AdminController@manage_order' )->name('manage.order');
 });

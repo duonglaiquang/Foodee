@@ -6,7 +6,7 @@
         <section class="content-header">
             <h1>
                 Report
-                <small>12/10/2017</small>
+                <small></small>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -15,45 +15,30 @@
         </section>
         <section class="content">
             <div class="row">
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box">
-                        <span class="info-box-icon bg-aqua">
-                            <i class="ion ion-ios-gear-outline"></i>
-                        </span>
-                        <div class="info-box-content">
-                            <span class="info-box-text">CPU Traffic</span>
-                            <span class="info-box-number">90<small>%</small></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box">
-                        <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
-
-                        <div class="info-box-content">
-                            <span class="info-box-text">Likes</span>
-                            <span class="info-box-number">41,410</span>
-                        </div>
-                    </div>
-                </div>
                 <div class="clearfix visible-sm-block"></div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="info-box">
-                        <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
-
+                        <a href="{{ route('manage.order') }}">
+                            <span class="info-box-icon bg-green">
+                                <i class="ion ion-ios-cart-outline"></i>
+                            </span>
+                        </a>
                         <div class="info-box-content">
-                            <span class="info-box-text">Sales</span>
-                            <span class="info-box-number">760</span>
+                            <span class="info-box-text">Total Order</span>
+                            <span class="info-box-number">{!! $totalorder !!}</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="info-box">
-                        <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
-
+                        <a href="{{ route('manage.customer') }}">
+                            <span class="info-box-icon bg-yellow">
+                                <i class="ion ion-ios-people-outline"></i>
+                            </span>
+                        </a>
                         <div class="info-box-content">
-                            <span class="info-box-text">New Members</span>
-                            <span class="info-box-number">2,000</span>
+                            <span class="info-box-text"> Total Members</span>
+                            <span class="info-box-number">{!! $totaluser !!}</span>
                         </div>
                     </div>
                 </div>
@@ -67,18 +52,6 @@
                                 <button type="button" class="btn btn-box-tool" data-widget="collapse">
                                     <i class="fa fa-minus"></i>
                                 </button>
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown">
-                                        <i class="fa fa-wrench"></i>
-                                    </button>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a href="#">Action</a></li>
-                                        <li><a href="#">Another action</a></li>
-                                        <li><a href="#">Something else here</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="#">Separated link</a></li>
-                                    </ul>
-                                </div>
                                 <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
                                 </button>
                             </div>
@@ -86,12 +59,22 @@
                         <div class="box-body">
                             <div class="row">
                                 <div class="col-md-8">
-                                    <p class="text-center">
-                                        <strong>Sales: 1 Jan, 2014 - 30 Jul, 2014</strong>
-                                    </p>
-                                    <div class="chart">
-                                        <canvas id="salesChart" style="height: 180px;"></canvas>
+                                    <!-- LINE CHART -->
+                                    <div class="box box-info">
+                                        <div class="box-header with-border">
+                                            <h3 class="box-title"><i class="fa fa-line-chart"></i>Sold Chart</h3>
+                                            <div class="box-tools pull-right">
+                                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                            </div>
+                                        </div>
+                                        <div class="box-body chart-responsive">
+                                            <div class="chart" id="line-chart" style="height: 300px;"></div>
+                                        </div>
+                                        <!-- /.box-body -->
                                     </div>
+                                    <!-- /.box -->
                                 </div>
                                 <div class="col-md-4">
                                     <p class="text-center">

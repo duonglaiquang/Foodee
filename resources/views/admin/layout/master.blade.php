@@ -276,7 +276,7 @@
                         <a href="{{ route('manage.order') }}">
                             <i class="fa fa-calendar"></i> <span>Manage Order</span>
                             <span class="pull-right-container">
-                                <small class="label pull-right bg-blue">{!! $count !!}</small>
+                                <small class="label pull-right bg-blue">{!! $totalorder !!}</small>
                             </span>
                         </a>
                     </li>

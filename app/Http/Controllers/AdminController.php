@@ -31,19 +31,30 @@ class AdminController extends Controller
 
     public function home()
     {
+        $users = $this->information->all();
+        $totaluser = $users->count();
+
         $Order = $this->order->all();
-        $count = $Order->count();
+        $totalorder = $Order->count();
+
+        $products = DB::table('products')
+            ->join('order_details', 'products.id', '=', 'order_details.product_id')
+            ->distinct()
+            ->get();
         return view('admin.pages.dashboard_admin', compact(
-            'count'
+            'totalorder',
+            'totaluser',
+            'products',
+            'Order'
         ));
     }
 
     public function manage_food()
     {
         $Order = $this->order->all();
-        $count = $Order->count();
+        $totalorder = $Order->count();
         return view('admin.pages.manage_food', compact(
-        'count'
+        'totalorder'
     ));
     }
 
@@ -64,21 +75,27 @@ class AdminController extends Controller
     public function manage_drink()
     {
         $Order = $this->order->all();
-        $count = $Order->count();
+        $totalorder = $Order->count();
         return view('admin.pages.manage_drink', compact(
-            'count'
+            'totalorder'
         ));
     }
 
-    public function top()
+    public function manage_customer ()
     {
-        return view('admin.pages.layout.top-nav');
+        $users = $this->information->orderBy('created_at', 'desc')->get();
+        $Order = $this->order->all();
+        $totalorder = $Order->count();
+        return view('admin.pages.manage_customer', compact(
+            'users',
+            'totalorder'
+        ));
     }
 
     public function manage_order ()
     {
         $orders = $this->order->orderBy('created_at', 'desc')->get();
-        $products = $this->product
+        $products = DB::table('products')
             ->join('order_details', 'products.id', '=', 'order_details.product_id')
             ->distinct()
             ->get();
@@ -86,11 +103,11 @@ class AdminController extends Controller
             ->join('orders', 'users.id', '=', 'orders.user_id')
             ->distinct()
             ->get();
-        $count = $orders->count();
+        $totalorder = $orders->count();
         return view('admin.pages.manage_adminorder', compact(
             'users',
             'orders',
-            'count',
+            'totalorder',
             'products'
         ));
     }
