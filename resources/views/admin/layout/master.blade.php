@@ -20,9 +20,9 @@
 <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
         <header class="main-header">
-            <a href="#" class="logo">
-                <span class="logo-mini"><b>A</b>LT</span>
-                <span class="logo-lg"><b>Admin</b>LTE</span>
+            <a href="{{ route('user.profile',Auth::user()->id) }}" class="logo">
+                <span class="logo-mini"><b>A</b></span>
+                <span class="logo-lg"><b>Admin</b></span>
             </a>
             <nav class="navbar navbar-static-top">
                 <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
@@ -150,7 +150,6 @@
                                 <li class="footer"><a href="#">View all</a></li>
                             </ul>
                         </li>
-                        <!-- Tasks: style can be found in dropdown.less -->
                         <li class="dropdown tasks-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="fa fa-flag-o"></i>
@@ -232,66 +231,13 @@
                                 </li>
                             </ul>
                         </li>
-                        <!-- User Account: style can be found in dropdown.less -->
-                        <li class="dropdown user user-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="#" class="user-image" alt="User Image">
-                                <span class="hidden-xs">Alexander Pierce</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <!-- User image -->
-                                <li class="user-header">
-                                    <img src="#" class="img-circle" alt="User Image">
-
-                                    <p>
-                                        Alexander Pierce - Web Developer
-                                        <small>Member since Nov. 2012</small>
-                                    </p>
-                                </li>
-                                <!-- Menu Body -->
-                                <li class="user-body">
-                                    <div class="row">
-                                        <div class="col-xs-4 text-center">
-                                            <a href="#">Followers</a>
-                                        </div>
-                                        <div class="col-xs-4 text-center">
-                                            <a href="#">Sales</a>
-                                        </div>
-                                        <div class="col-xs-4 text-center">
-                                            <a href="#">Friends</a>
-                                        </div>
-                                    </div>
-                                    <!-- /.row -->
-                                </li>
-                                <!-- Menu Footer-->
-                                <li class="user-footer">
-                                    <div class="pull-left">
-                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
-                                    </div>
-                                    <div class="pull-right">
-                                        <a href="#" class="btn btn-default btn-flat">Sign out</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                        <!-- Control Sidebar Toggle Button -->
-                        <li>
-                            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-                        </li>
+                        <li><a href="{{ route('home') }}"><i class="fa fa-home"></i><span>Home</span></a></li>
                     </ul>
                 </div>
+            </nav>
         </header>
         <aside class="main-sidebar">
             <section class="sidebar nav-fix-header">
-                <div class="user-panel">
-                    <div class="pull-left image">
-                        <img src="#" class="img-circle" alt="User Image">
-                    </div>
-                    <div class="pull-left info">
-                        <p>Alexander Pierce</p>
-                        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-                    </div>
-                </div>
                 <form action="#" method="get" class="sidebar-form">
                     <div class="input-group">
                         <input type="text" name="q" class="form-control" placeholder="Search...">
@@ -327,11 +273,10 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="pages/calendar.html">
-                            <i class="fa fa-calendar"></i> <span>Calendar</span>
+                        <a href="{{ route('manage.order') }}">
+                            <i class="fa fa-calendar"></i> <span>Manage Order</span>
                             <span class="pull-right-container">
-                                <small class="label pull-right bg-red">3</small>
-                                <small class="label pull-right bg-blue">17</small>
+                                <small class="label pull-right bg-blue">{!! $count !!}</small>
                             </span>
                         </a>
                     </li>
@@ -345,6 +290,14 @@
                             </span>
                         </a>
                     </li>
+                    <li>
+                        <a href="javascript:void(0)" id="logout-1">
+                            <i class="fa fa-sign-out"></i><span>Logout</span>
+                        </a>
+                        {!! Form::open(['role'=>'form', 'route'=> 'logout', 'method'=>'POST', 'id'=>'logout-form']) !!}
+                        {{ csrf_field() }}
+                        {!! Form::close() !!}
+                    </li>
                 </ul>
             </section>
         </aside>
@@ -353,7 +306,6 @@
             <div class="pull-right hidden-xs">
                 <b>team Flash</b>
             </div>
-            <p> Ha noi Mot Ngay Dep Troi !!</p>
         </footer>
         <aside class="control-sidebar control-sidebar-dark">
             <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
@@ -454,10 +406,8 @@
                         </li>
                     </ul>
                     <!-- /.control-sidebar-menu -->
-
                 </div>
                 <!-- /.tab-pane -->
-
                 <!-- Settings tab content -->
                 <div class="tab-pane" id="control-sidebar-settings-tab">
                     <form method="post">
@@ -501,12 +451,15 @@
                             <label class="control-sidebar-subheading">
                                 Turn off notifications
                         </div>
+                        <div class="form-group">
                             <label class="control-sidebar-subheading">
                                 Delete chat history
                                 <a href="javascript:void(0)" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
                             </label>
                         </div>
+                    </form>
                 </div>
+            </div>
         </aside>
         <div class="control-sidebar-bg"></div>
     </div>
@@ -525,6 +478,13 @@
     {{ HTML::script('bower/chart.js/Chart.js') }}
     {{ HTML::script('bower/admin-lte/dist/js/demo.js') }}
     {{ HTML::script('bower/vue2-filters/dist/vue2-filters.js') }}
+    <script>
+        $(document).ready(function () {
+            $('#logout-1').on('click', function () {
+                $('#logout-form').submit();
+            });
+        });
+    </script>
     @yield('script')
 </body>
 </html>

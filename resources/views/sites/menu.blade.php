@@ -35,7 +35,6 @@
         </div>
     </div>
     @include('sections.menu.header')
-    {{-- slider --}}
     <section class="slider-pages" height="360px">
 
         <article class="js-scrolling__page js-scrolling__page-1 js-scrolling--active">
@@ -105,7 +104,6 @@
         </article>
         <!-- /.js-scrolling__page js-scrolling__page-2 -->
 
-
         <article class="js-scrolling__page js-scrolling__page-3">
             <div class="slider-page slider-page--left">
                 <div class="slider-page--skew">
@@ -142,8 +140,6 @@
 
     </section>
     <!-- /.slider-pages -->
-
-
 
 
     <div class="tabs">
@@ -304,4 +300,3 @@
     {{ HTML::script('bower/jquery-ui/jquery-ui.js') }}
     {{ HTML::script('js/sites/page_menu.js') }}
 @endsection
-{{--  --}}

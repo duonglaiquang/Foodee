@@ -3,38 +3,48 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Auth;
-use session;
+use App\Models\User;
+use App\Models\Order;
+use App\Models\OrderDetail;
 use App\Models\Product;
+use Auth;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
-//
-//    protected $produces;
-//
-//    public function __construct(
-//        Product $produces
-//    )
-//    {
-//        $this->produces = $produces;
-//    }
+    protected $information;
+    protected $order;
+    protected $orderDetail;
+    protected $product;
+
+    public function __construct(
+        User $information,
+        OrderDetail $orderDetail,
+        Order $order,
+        Product $product
+    ){
+        $this->information = $information;
+        $this->order = $order;
+        $this->orderDetail = $orderDetail;
+        $this->product = $product;
+    }
 
     public function home()
     {
-        // if (Auth::check()) {
-        //     if (Auth::User()->level == '1') {
-        //         return view('admin.index2');
-        //     } else
-        //         return view('sites.home');
-        // }
-        // return view('sites.home');
-        return view('admin.index2');
+        $Order = $this->order->all();
+        $count = $Order->count();
+        return view('admin.pages.dashboard_admin', compact(
+            'count'
+        ));
     }
-
 
     public function manage_food()
     {
-        return view('admin.manage_food');
+        $Order = $this->order->all();
+        $count = $Order->count();
+        return view('admin.pages.manage_food', compact(
+        'count'
+    ));
     }
 
     public function post_products(Request $request)
@@ -53,12 +63,35 @@ class AdminController extends Controller
 
     public function manage_drink()
     {
-        return view('admin.manage_drink');
+        $Order = $this->order->all();
+        $count = $Order->count();
+        return view('admin.pages.manage_drink', compact(
+            'count'
+        ));
     }
 
     public function top()
     {
         return view('admin.pages.layout.top-nav');
     }
-    //
+
+    public function manage_order ()
+    {
+        $orders = $this->order->orderBy('created_at', 'desc')->get();
+        $products = $this->product
+            ->join('order_details', 'products.id', '=', 'order_details.product_id')
+            ->distinct()
+            ->get();
+        $users = DB::table('users')
+            ->join('orders', 'users.id', '=', 'orders.user_id')
+            ->distinct()
+            ->get();
+        $count = $orders->count();
+        return view('admin.pages.manage_adminorder', compact(
+            'users',
+            'orders',
+            'count',
+            'products'
+        ));
+    }
 }

@@ -144,9 +144,9 @@
                                 <div class="col-sm-3 col-xs-6">
                                     <div class="description-block border-right">
                                         <span class="description-percentage text-yellow"><i
-                                            class="fa fa-caret-left"></i> 0%</span>
-                                            <h5 class="description-header">$10,390.90</h5>
-                                            <span class="description-text">TOTAL COST</span>
+                                                    class="fa fa-caret-left"></i> 0%</span>
+                                        <h5 class="description-header">$10,390.90</h5>
+                                        <span class="description-text">TOTAL COST</span>
                                     </div>
                                 </div>
                                 <div class="col-sm-3 col-xs-6">
