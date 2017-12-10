@@ -37,6 +37,7 @@ class UserController extends Controller
 
     public function profile(Request $request)
     {
+        $inforUser = $this->information->where('id', '=', $request->id);
         $users = User::find($request->id);
         $orders = Order::where('user_id', '=', $users->id)->orderBy('created_at', 'desc')->get();
         $products = DB::table('products')->join('order_details', 'products.id', '=', 'order_details.product_id')
@@ -45,7 +46,12 @@ class UserController extends Controller
 
         $count = $orders->count();
 
-        return view('sites.user.user_profile', compact('users', 'orders', 'count', 'products'));
+        return view('sites.user.user_profile', compact('users',
+            'orders',
+            'count',
+            'products',
+            'inforUser'
+        ));
     }
 
     public function editProfile(Request $request)
