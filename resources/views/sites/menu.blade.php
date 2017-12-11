@@ -76,7 +76,7 @@
         <article class="js-scrolling__page js-scrolling__page-2">
             <div class="slider-page slider-page--left">
                 <div class="slider-page--skew">
-                    <div class="slider-page__content" >
+                    <div class="slider-page__content">
                         <h1 class="slider-page__title">
                             Now you are here
                         </h1>
@@ -94,7 +94,7 @@
 
             <div class="slider-page slider-page--right">
                 <div class="slider-page--skew">
-                    <div class="slider-page__content" >
+                    <div class="slider-page__content">
                     </div>
                     <!-- /.slider-page__content -->
                 </div>
@@ -187,16 +187,17 @@
             </div>
         </div>
         <div class="tab-2">
-            <label for="tab2-2" class="title-label">SHOW DRINK</label>
-            <input id="tab2-2" name="tabs-two" type="radio">
+            <label for="tab2-2" class="title-label">DRINK</label>
+            <input id="tab2-2" name="tabs-two" type="radio" style="width: 80%; margin: auto;">
             <div>
                 <div id="work" class="page">
                     <div class="container">
-                        <div class="row fix-height-menu" >
+                        <div class="row fix-height-menu">
                             <section id="projects">
                                 <div class="container">
                                     <div class="thumbex" v-for="drink in drinks">
-                                        <div class="thumbnail"><a v-bind:href="'../product/'+drink.id"> <img v-bind:src="url+drink.avatar"/><span>@{{ drink.name }}</span></a>
+                                        <div class="thumbnail"><a v-bind:href="'../product/'+drink.id"> <img
+                                                        v-bind:src="url+drink.avatar"/><span>@{{ drink.name }}</span></a>
                                         </div>
                                     </div>
                                 </div>
