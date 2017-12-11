@@ -68,7 +68,7 @@
                                         <td class="col-sm-8 col-md-6">
                                             <div class="media">
                                                 <a href={{route('product.detail',$product->id)}}> <img
-                                                            class="media-object"
+                                                            class="media-object img-responsive"
                                                             src="../img/{{$product->avatar}}">
                                                 </a>
                                                 <div class="media-body">
@@ -109,7 +109,7 @@
                                     <td class="col-sm-8 col-md-6">
                                         <a href="{{route('menu')}}">
                                             <button type="button" class="btn btn-warning"
-                                                    style="font-size: 18px !important;float: left;">
+                                                    style="font-size: 18px !important;float: left;margin-left: -14px;">
                                                 <i class="fa fa-angle-left"></i>
                                                 Continue Shopping
                                             </button>

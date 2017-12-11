@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
+
 class HomeController extends Controller
 {
     /**
@@ -21,6 +23,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('sites.home');
+        $foods = Product::where('category', '=', 'Food')
+            ->take(4)->get();
+
+        $drinks = Product::where('category', '=', 'Drink')
+            ->take(4)->get();
+
+        return view('sites.home', compact('foods', 'drinks'));
     }
 }

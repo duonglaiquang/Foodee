@@ -8,8 +8,6 @@
     {{ HTML::style('css/sites/homepage.css') }}
     <link href='//fonts.googleapis.com/css?family=Raleway:400,200,100,300,500,600,700,800,900' rel='stylesheet'
           type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700' rel='stylesheet'
-          type='text/css'>
     @yield('style')
 </head>
 <body>

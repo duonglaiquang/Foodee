@@ -1563,24 +1563,34 @@ $(function () {
     var openReviewBtn = $('#open-review-box');
     var closeReviewBtn = $('#close-review-box');
     var ratingsField = $('#ratings-hidden');
+    var x = document.getElementById('label');
 
     openReviewBtn.click(function (e) {
         reviewBox.slideDown(400, function () {
-            $('.cmt-lb').hide();
             $('#new-review').trigger('autosize.resize');
             newReview.focus();
         });
+        if (x.style.display === 'none') {
+            x.style.display = 'inline';
+        } else {
+            x.style.display = 'none';
+        }
+        $('.text-right').css('background', 'whitesmoke');
         openReviewBtn.fadeOut(100);
         closeReviewBtn.show();
     });
 
     closeReviewBtn.click(function (e) {
         e.preventDefault();
-        $('.cmt-lb').show();
         reviewBox.slideUp(300, function () {
             newReview.focus();
             openReviewBtn.fadeIn(200);
         });
+        if (x.style.display === 'none') {
+            x.style.display = 'inline';
+        } else {
+            x.style.display = 'none';
+        }
         closeReviewBtn.hide();
 
     });

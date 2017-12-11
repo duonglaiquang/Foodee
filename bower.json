@@ -40,7 +40,8 @@
     "flexslider": "FlexSlider#^2.6.4",
     "bootstrap-star-rating": "^4.0.3",
     "jquery-1.12.4": "https://code.jquery.com/jquery-1.12.4.js",
-    "Open-sans": "https://github.com/FontFaceKit/open-sans.git"
+    "Open-sans": "https://github.com/FontFaceKit/open-sans.git",
+    "jquery-3.2.1.min": "https://code.jquery.com/jquery-3.2.1.min.js"
   },
   "resolutions": {
     "jquery": ">=1.8.3",

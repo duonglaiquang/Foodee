@@ -35,121 +35,121 @@
         </div>
     </div>
     @include('sections.menu.header')
-{{-- slider --}}
-<section class="slider-pages" height="360px">
+    {{-- slider --}}
+    <section class="slider-pages" height="360px">
 
-  <article class="js-scrolling__page js-scrolling__page-1 js-scrolling--active">
-    <div class="slider-page slider-page--left">
-      <div class="slider-page--skew">
-        <div class="slider-page__content">
-        </div>
-        <!-- /.slider-page__content -->
-      </div>
-      <!-- /.slider-page--skew -->
-    </div>
-    <!-- /.slider-page slider-page--left -->
+        <article class="js-scrolling__page js-scrolling__page-1 js-scrolling--active">
+            <div class="slider-page slider-page--left">
+                <div class="slider-page--skew">
+                    <div class="slider-page__content">
+                    </div>
+                    <!-- /.slider-page__content -->
+                </div>
+                <!-- /.slider-page--skew -->
+            </div>
+            <!-- /.slider-page slider-page--left -->
 
-    <div class="slider-page slider-page--right">
-      <div class="slider-page--skew">
-        <div class="slider-page__content" style="height: 400px">
-          <h1 class="slider-page__title slider-page__title--big">
-            Gray & White - Skewed Slider with Scrolling
-          </h1>
-          <!-- /.slider-page__title slider-page__title--big -->
-          <h2 class="slider-page__title">
-            Start of your story
-          </h2>
-          <!-- /.slider-page__title -->
-          <p class="slider-page__description">
-            Please scroll down or press the down arrow on your keyboard
-          </p>
-          <!-- /.slider-page__description -->
-        </div>
-        <!-- /.slider-page__content -->
-      </div>
-      <!-- /.slider-page--skew -->
-    </div>
-    <!-- /.slider-page slider-page--right -->
-  </article>
-  <!-- /.js-scrolling__page js-scrolling__page-1 js-scrolling--active -->
-
-
-  <article class="js-scrolling__page js-scrolling__page-2">
-    <div class="slider-page slider-page--left">
-      <div class="slider-page--skew">
-        <div class="slider-page__content" >
-          <h1 class="slider-page__title">
-            Now you are here
-          </h1>
-          <!-- /.slider-page__title -->
-          <p class="slider-page__description">
-            Please continue scrolling
-          </p>
-          <!-- /.slider-page__description -->
-        </div>
-        <!-- /.slider-page__content -->
-      </div>
-      <!-- /.slider-page--skew -->
-    </div>
-    <!-- /.slider-page slider-page--left -->
-
-    <div class="slider-page slider-page--right">
-      <div class="slider-page--skew">
-        <div class="slider-page__content" >
-        </div>
-        <!-- /.slider-page__content -->
-      </div>
-      <!-- /.slider-page--skew -->
-    </div>
-    <!-- /.slider-page slider-page--right -->
-  </article>
-  <!-- /.js-scrolling__page js-scrolling__page-2 -->
+            <div class="slider-page slider-page--right">
+                <div class="slider-page--skew">
+                    <div class="slider-page__content" style="height: 400px">
+                        <h1 class="slider-page__title slider-page__title--big">
+                            Gray & White - Skewed Slider with Scrolling
+                        </h1>
+                        <!-- /.slider-page__title slider-page__title--big -->
+                        <h2 class="slider-page__title">
+                            Start of your story
+                        </h2>
+                        <!-- /.slider-page__title -->
+                        <p class="slider-page__description">
+                            Please scroll down or press the down arrow on your keyboard
+                        </p>
+                        <!-- /.slider-page__description -->
+                    </div>
+                    <!-- /.slider-page__content -->
+                </div>
+                <!-- /.slider-page--skew -->
+            </div>
+            <!-- /.slider-page slider-page--right -->
+        </article>
+        <!-- /.js-scrolling__page js-scrolling__page-1 js-scrolling--active -->
 
 
-  <article class="js-scrolling__page js-scrolling__page-3">
-    <div class="slider-page slider-page--left">
-      <div class="slider-page--skew">
-        <div class="slider-page__content">
-        </div>
-        <!-- /.slider-page__content -->
-      </div>
-      <!-- /.slider-page--skew -->
-    </div>
-    <!-- /.slider-page slider-page--left -->
+        <article class="js-scrolling__page js-scrolling__page-2">
+            <div class="slider-page slider-page--left">
+                <div class="slider-page--skew">
+                    <div class="slider-page__content">
+                        <h1 class="slider-page__title">
+                            Now you are here
+                        </h1>
+                        <!-- /.slider-page__title -->
+                        <p class="slider-page__description">
+                            Please continue scrolling
+                        </p>
+                        <!-- /.slider-page__description -->
+                    </div>
+                    <!-- /.slider-page__content -->
+                </div>
+                <!-- /.slider-page--skew -->
+            </div>
+            <!-- /.slider-page slider-page--left -->
 
-    <div class="slider-page slider-page--right">
-      <div class="slider-page--skew">
-        <div class="slider-page__content">
-          <h1 class="slider-page__title">
-            Final is just the beginning
-          </h1>
-          <!-- /.slider-page__title -->
-          <p class="slider-page__description">
-            Feel free to follow me on <a class="slider-page__link" href="https://twitter.com/WispProxy"
-                                         target="_blank">Twitter</a>
-            and check of <a class="slider-page__link" href="https://codepen.io/WispProxy/pens/public"
-                            target="_blank">my other works</a>
-          </p>
-          <!-- /.slider-page__description -->
-        </div>
-        <!-- /.slider-page__content -->
-      </div>
-      <!-- /.slider-page--skew -->
-    </div>
-    <!-- /.slider-page slider-page--right -->
-  </article>
-  <!-- /.js-scrolling__page js-scrolling__page-3 -->
+            <div class="slider-page slider-page--right">
+                <div class="slider-page--skew">
+                    <div class="slider-page__content">
+                    </div>
+                    <!-- /.slider-page__content -->
+                </div>
+                <!-- /.slider-page--skew -->
+            </div>
+            <!-- /.slider-page slider-page--right -->
+        </article>
+        <!-- /.js-scrolling__page js-scrolling__page-2 -->
 
-</section>
-<!-- /.slider-pages -->
+
+        <article class="js-scrolling__page js-scrolling__page-3">
+            <div class="slider-page slider-page--left">
+                <div class="slider-page--skew">
+                    <div class="slider-page__content">
+                    </div>
+                    <!-- /.slider-page__content -->
+                </div>
+                <!-- /.slider-page--skew -->
+            </div>
+            <!-- /.slider-page slider-page--left -->
+
+            <div class="slider-page slider-page--right">
+                <div class="slider-page--skew">
+                    <div class="slider-page__content">
+                        <h1 class="slider-page__title">
+                            Final is just the beginning
+                        </h1>
+                        <!-- /.slider-page__title -->
+                        <p class="slider-page__description">
+                            Feel free to follow me on <a class="slider-page__link" href="https://twitter.com/WispProxy"
+                                                         target="_blank">Twitter</a>
+                            and check of <a class="slider-page__link" href="https://codepen.io/WispProxy/pens/public"
+                                            target="_blank">my other works</a>
+                        </p>
+                        <!-- /.slider-page__description -->
+                    </div>
+                    <!-- /.slider-page__content -->
+                </div>
+                <!-- /.slider-page--skew -->
+            </div>
+            <!-- /.slider-page slider-page--right -->
+        </article>
+        <!-- /.js-scrolling__page js-scrolling__page-3 -->
+
+    </section>
+    <!-- /.slider-pages -->
 
 
 
 
     <div class="tabs">
         <div class="tab-2">
-            <label for="tab2-1" class="title-label">SHOW FOOD</label>
-            <input id="tab2-1" name="tabs-two" type="radio" checked="checked">
+            <label for="tab2-1" class="title-label">FOOD</label>
+            <input id="tab2-1" name="tabs-two" type="radio" checked="checked" style="width: 80%;margin: auto">
             <div>
                 <div id="work" class="page">
                     <div class="container">
@@ -191,8 +191,8 @@
             </div>
         </div>
         <div class="tab-2">
-            <label for="tab2-2" class="title-label">SHOW DRINK</label>
-            <input id="tab2-2" name="tabs-two" type="radio">
+            <label for="tab2-2" class="title-label">DRINK</label>
+            <input id="tab2-2" name="tabs-two" type="radio" style="width: 80%;margin: auto;">
             <div>
                 <div id="work" class="page">
                     <div class="container">

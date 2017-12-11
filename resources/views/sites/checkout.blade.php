@@ -34,7 +34,7 @@
 
     @include('sections.menu.header')
     <div class="container wrapper">
-        <div class="row cart-body" style="margin-top: 5%">
+        <div class="row cart-body" style="margin-top: 5%;min-height: 576px;">
             <div class="form-horizontal">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-push-6 col-sm-push-6">
                     <!--REVIEW ORDER-->
@@ -53,13 +53,17 @@
                             @foreach($products as $product)
                                 <div class="form-group">
                                     <div class="col-sm-3 col-xs-3">
-                                        <img class="img-responsive"
-                                             src="{{asset("../img/$product->avatar")}}"/>
+                                        <a href="{{route('product.detail',$product->product_id)}}"> <img
+                                                    class="img-responsive"
+                                                    src="{{asset("../img/$product->avatar")}}"/>
+                                        </a>
                                     </div>
                                     <div class="col-sm-6 col-xs-6">
-                                        <div class="col-xs-12 prdName">{{$product->name}}</div>
+                                        <div class="col-xs-12 prdName"><a
+                                                    href="{{route('product.detail',$product->product_id)}}">{{$product->name}}</a>
+                                        </div>
                                         <div class="col-xs-12">
-                                            <small>Quantity:<span>{{$product->quantity}}</span></small>
+                                            <small>Quantity: <span>{{$product->quantity}}</span></small>
                                         </div>
                                     </div>
                                     <div class="col-sm-3 col-xs-3 text-right">
@@ -152,20 +156,22 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="col-md-12"><strong>Credit Card Number:</strong></div>
-                                    <div class="col-md-12"><input type="text" class="form-control" name="card_number"
-                                                                  value="" required/></div>
+                                    <div class="col-md-12"><input id="card_num" type="text" class="form-control"
+                                                                  name="card_number"
+                                                                  value=""/></div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-md-12"><strong>Card CVV:</strong></div>
-                                    <div class="col-md-12"><input type="text" class="form-control" name="card_code"
-                                                                  value="" requirede/></div>
+                                    <div class="col-md-12"><input id="card_cvv" type="text" class="form-control"
+                                                                  name="card_code"
+                                                                  value=""/></div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-md-12">
                                         <strong>Expiration Date</strong>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        <select class="form-control" name="month" required>
+                                        <select class="form-control" name="month" id="month">
                                             <option value="">Month</option>
                                             <option value="01">01</option>
                                             <option value="02">02</option>
@@ -182,7 +188,7 @@
                                         </select>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        <select class="form-control" name="year" required>
+                                        <select class="form-control" name="year" id="year">
                                             <option value="">Year</option>
                                             <option value="2015">2015</option>
                                             <option value="2016">2016</option>
@@ -211,14 +217,15 @@
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <div class="col-md-12">
-                                        <button type="submit" class="btn btn-success"
-                                                style="width: 100%;font-size: 1.2em;">
-                                            Place Order
-                                        </button>
-                                    </div>
-                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-success"
+                                        style="width: 100%;font-size: 1.2em;">
+                                    Place Order
+                                </button>
                             </div>
                         </div>
                         <!--CREDIT CART PAYMENT END-->
@@ -233,17 +240,26 @@
 @section('script')
     {{ HTML::script('bower/jquery-1.12.4/index.js')}}
     {{ HTML::script('js/sites/page_menu.js') }}
-    {{ HTML::script('bower/jquery-ui/jquery-ui.js') }}
+    {{ HTML::script('bower/jquery-3.2.1.min/index.js') }}
+
     <script>
         $('#cash').prop('checked', true);
-        $card=$('#card');
-        $cash=$('#cash');
-        $('input[type="radio"]').on('click change', function(e) {
+        $card = $('#card');
+        $cash = $('#cash');
+        $('input[type="radio"]').on('click change', function (e) {
             if ($card.is(":checked")) {
-                $("#credit-card").show();
+                $("#credit-card").slideDown("slow");
+                $("#card_num").attr("required", "required");
+                $("#card_cvv").attr("required", "required");
+                $("#month").attr("required", "required");
+                $("#year").attr("required", "required");
             }
             if ($cash.is(":checked")) {
-                $("#credit-card").hide();
+                $("#card_num").removeAttr('required');
+                $("#card_cvv").removeAttr('required');
+                $("#month").removeAttr('required');
+                $("#year").removeAttr('required');
+                $("#credit-card").slideUp("slow");
             }
         });
     </script>

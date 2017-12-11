@@ -30,7 +30,7 @@ class ProductController extends Controller
         $prd_img = $this->prd_img->where('product_id', '=', "$id")->get();
         $prd_similar = $this->prd_detail
             ->whereBetween('price', [$prd_detail->price - 10, $prd_detail->price + 10])
-            ->take(4)->get();
+            ->take(5)->get();
         $prd_id = $id;
         $listCmt = $this->cmt->where('product_id', $prd_detail->id)->get();
         $listUser = User::all();

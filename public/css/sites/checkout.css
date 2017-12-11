@@ -357,7 +357,11 @@ hr {
 }
 
 .panel {
-    margin-bottom: 50px !important;
+    margin-bottom: 25px !important;
+}
+
+#review a:hover {
+    color: black !important;
 }
 
 .text-right {
@@ -378,7 +382,7 @@ hr {
     color: inherit !important;
 }
 
-#credit-card{
+#credit-card {
     overflow-y: hidden;
     max-height: 600px; /* approximate max height */
 
@@ -391,3 +395,6 @@ hr {
     max-height: 0;
 }
 
+.col-md-12 {
+    padding-bottom: 2px;
+}

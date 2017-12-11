@@ -42,6 +42,7 @@
     src: local('Abril Fatface'), local('AbrilFatface-Regular'), url(http://fonts.gstatic.com/s/abrilfatface/v8/X1g_KwGeBV3ajZIXQ9VnDjxObtw73-qQgbr7Be51v5c.woff2) format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
 }
+
 .fix-width {
     margin: 0 auto;
     padding: 0px;
@@ -172,7 +173,6 @@
 .header-product-hot {
     text-align: center;
 }
-
 
 .title-page .title {
     font-size: 48px;
@@ -736,6 +736,7 @@ footer {
     background-color: blue;
     box-shadow: 5px 10px 40px 5px rgba(0, 0, 0, 0.5);
 }
+
 .container .thumbex .thumbnail {
     overflow: hidden;
     min-width: 250px;
@@ -745,6 +746,7 @@ footer {
     backface-visibility: hidden;
     transition: all 0.4s ease-out;
 }
+
 .container .thumbex .thumbnail img {
     position: absolute;
     z-index: 1;
@@ -755,6 +757,7 @@ footer {
     transform: translate(-50%, -50%);
     backface-visibility: hidden;
 }
+
 .container .thumbex .thumbnail span {
     position: absolute;
     z-index: 2;
@@ -772,11 +775,13 @@ footer {
     letter-spacing: 0.2px;
     transition: all 0.3s ease-out;
 }
+
 .container .thumbex .thumbnail:hover {
     backface-visibility: hidden;
     transform: scale(1.15, 1.15);
     opacity: 1;
 }
+
 .container .thumbex .thumbnail:hover span {
     opacity: 0;
 }
@@ -790,63 +795,85 @@ footer {
     -moz-flex-wrap: wrap;
     flex-wrap: wrap;
     margin: 0;
-    overflow: hidden; }
-    .tabs [class^="tab"] label,
-    .tabs [class*=" tab"] label {
-        color: #7f087f;
-        cursor: pointer;
-        display: block;
-        font-size: 1.1em;
-        font-weight: 300;
-        line-height: 1em;
-        padding: 2rem 0;
-        text-align: center; }
-        .tabs [class^="tab"] [type="radio"],
-        .tabs [class*=" tab"] [type="radio"] {
-            border-bottom: 1px solid rgba(239, 237, 239, 0.5);
-            cursor: pointer;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            display: block;
-            width: 100%;
-            -webkit-transition: all 0.3s ease-in-out;
-            -moz-transition: all 0.3s ease-in-out;
-            -o-transition: all 0.3s ease-in-out;
-            transition: all 0.3s ease-in-out; }
-            .tabs [class^="tab"] [type="radio"]:hover, .tabs [class^="tab"] [type="radio"]:focus,
-            .tabs [class*=" tab"] [type="radio"]:hover,
-            .tabs [class*=" tab"] [type="radio"]:focus {
-                border-bottom: 1px solid #fd264f; }
-                .tabs [class^="tab"] [type="radio"]:checked,
-                .tabs [class*=" tab"] [type="radio"]:checked {
-                    border-bottom: 2px solid #fd264f; }
-                    .tabs [class^="tab"] [type="radio"]:checked + div,
-                    .tabs [class*=" tab"] [type="radio"]:checked + div {
-                        opacity: 1; }
-                        .tabs [class^="tab"] [type="radio"] + div,
-                        .tabs [class*=" tab"] [type="radio"] + div {
-                            display: block;
-                            opacity: 0;
-                            padding: 2rem 0;
-                            width: 90%;
-                            transition: all 0.3s ease-in-out; }
-                            .tabs .tab-2 {
-                                width: 50%; }
-                                .tabs .tab-2 [type="radio"] + div {
-                                    width: 200%;
-                                    margin-left: 200%; }
-                                    .tabs .tab-2 [type="radio"]:checked + div {
-                                        margin-left: 0; }
-                                        .tabs .tab-2:last-child [type="radio"] + div {
-                                            margin-left: 100%; }
-                                            .tabs .tab-2:last-child [type="radio"]:checked + div {
-                                                margin-left: -100%; }
+    overflow: hidden;
+}
 
-                                                .title-label {
-                                                    font-size: 40px !important;
-                                                    text-shadow: 0px 5px 5px;
-                                                }
+.tabs [class^="tab"] label,
+.tabs [class*=" tab"] label {
+    color: #7f087f;
+    cursor: pointer;
+    display: block;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1em;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.tabs [class^="tab"] [type="radio"],
+.tabs [class*=" tab"] [type="radio"] {
+    border-bottom: 1px solid rgba(239, 237, 239, 0.5);
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
+    width: 100%;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.tabs [class^="tab"] [type="radio"]:hover, .tabs [class^="tab"] [type="radio"]:focus,
+.tabs [class*=" tab"] [type="radio"]:hover,
+.tabs [class*=" tab"] [type="radio"]:focus {
+    border-bottom: 1px solid #fd264f;
+}
+
+.tabs [class^="tab"] [type="radio"]:checked,
+.tabs [class*=" tab"] [type="radio"]:checked {
+    border-bottom: 2px solid #fd264f;
+}
+
+.tabs [class^="tab"] [type="radio"]:checked + div,
+.tabs [class*=" tab"] [type="radio"]:checked + div {
+    opacity: 1;
+}
+
+.tabs [class^="tab"] [type="radio"] + div,
+.tabs [class*=" tab"] [type="radio"] + div {
+    display: block;
+    opacity: 0;
+    padding: 2rem 0;
+    width: 90%;
+    transition: all 0.3s ease-in-out;
+}
+
+.tabs .tab-2 {
+    width: 50%;
+}
+
+.tabs .tab-2 [type="radio"] + div {
+    width: 200%;
+    margin-left: 200%;
+}
+
+.tabs .tab-2 [type="radio"]:checked + div {
+    margin-left: 0;
+}
+
+.tabs .tab-2:last-child [type="radio"] + div {
+    margin-left: 100%;
+}
+
+.tabs .tab-2:last-child [type="radio"]:checked + div {
+    margin-left: -100%;
+}
+
+.title-label {
+    font-size: 40px !important;
+}
 
 /***********************
 *  Variables
@@ -922,6 +949,7 @@ footer {
     transform: skewX(18deg);
     transition: transform 1350ms;
 }
+
 .slider-page__title {
     margin-bottom: 1em;
     font-size: 1em;
