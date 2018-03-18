@@ -296,8 +296,14 @@
                 <div class="modal-header">
                     {{ Form::button('x', [ 'class' => 'close', 'data-dismiss' => 'modal' ]) }}
                     <h4 class="modal-title">{{ __('order detail') }}</h4>
+                    <div>
+                        <label>Address: {{$order->address}}</label><br>
+                        <label>Phone: {{$order->phone}}</label><br>
+                        <label>Message: {{$order->mess}}</label><br>
+                    </div>
                 </div>
                 <div class="modal-body" id="result" style="padding: 0 15px 15px 15px !important;">
+
                 </div>
             </div>
         </div>

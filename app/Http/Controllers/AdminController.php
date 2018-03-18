@@ -134,10 +134,6 @@ class AdminController extends Controller
 
     public function complete()
     {
-        // $complete  = DB::table('orders')
-        // ->where('status','=' ,'complete')
-        // ->where(DATE('updated_at'),'=',Curdate())
-        // ->count();
         $complete = DB::select('
             select count(*) as so_luong
             from orders

@@ -92,6 +92,9 @@ class PagesController extends Controller
         $order->user_id = $user->id;
         $order->product_count = $user->cart;
         $order->sum = $request->sum;
+        $order->address=$request->address;
+        $order->phone=$request->phone;
+        $order->mess=$request->mess;
         $order->save();
         $user->cart = 0;
         $user->save();
@@ -106,11 +109,11 @@ class PagesController extends Controller
             $ord_detail->save();
             Cart::destroy($cart->id);
         }
-        $user = User::findOrFail($user->id);
-        $data = new UserEmail();
-        $data->subject = "Foodee Order Success";
-
-         Mail::to($user)->send($data);
+//        $user = User::findOrFail($user->id);
+//        $data = new UserEmail();
+//        $data->subject = "Foodee Order Success";
+//
+//         Mail::to($user)->send($data);
         return redirect(route('thankyou'));
     }
 

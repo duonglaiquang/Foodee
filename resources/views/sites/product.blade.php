@@ -38,7 +38,7 @@
         </div>
     </div>
     <div id="add_order">
-    @include('sections.menu.header')
+        @include('sections.menu.header')
     </div>
 
     <div id="wrapper">
@@ -85,61 +85,67 @@
             <div id="line"></div>
 
             {{--<form action="{{route('addToCart',$prd_id)}}" method="POST">--}}
-                {{--{{ csrf_field() }}--}}
-                <div id="info">
-                    <div id="info-content">
-                        <div id="header">
-                            <h2><strong>{!! $prd_detail->name !!}</strong></h2>
-                        </div>
-                        <div id="return_rate">
-                            @include('sites.rate')
+            {{--{{ csrf_field() }}--}}
+            <div id="info">
+                <div id="info-content">
+                    <div id="header">
+                        <h2><strong>{!! $prd_detail->name !!}</strong></h2>
+                    </div>
+                    <div id="return_rate">
+                        @include('sites.rate')
+                    </div>
+                    <div class="row">
+                        <p class="product-description"><span
+                                    style="font-weight: bold;font-size: 1.2em">Description : </span>{!! $prd_detail->description !!}
+                        </p>
+                    </div>
+                    <div id="left">
+                        <div class="row">
+                            <p class="product-description"><span
+                                        style="font-weight: bold;font-size: 1.2em">Price : </span>{!! $prd_detail->price !!}
+                                <i class="fa fa-dollar"></i>
+                            </p>
                         </div>
                         <div class="row">
                             <p class="product-description"><span
-                                        style="font-weight: bold;font-size: 1.2em">Description : </span>{!! $prd_detail->description !!}
+                                        style="font-weight: bold;font-size: 1.2em">Avability : </span>
+                                @if($prd_detail->status == 0)
+                                    <span style="color: green">In stock</span>
+                                @else
+                                    <span style="color: red">Out stock</span>
+                                @endif
                             </p>
                         </div>
-                        <div id="left">
-                            <div class="row">
-                                <p class="product-description"><span
-                                            style="font-weight: bold;font-size: 1.2em">Price : </span>{!! $prd_detail->price !!}
-                                    <i class="fa fa-dollar"></i>
-                                </p>
-                            </div>
-                            <div class="row">
-                                <p class="product-description"><span
-                                            style="font-weight: bold;font-size: 1.2em">Avability : </span>
-                                    @if($prd_detail->status == 0)
-                                        <span style="color: green">In stock</span>
-                                    @else
-                                        <span style="color: red">Out stock</span>
-                                    @endif
-                                </p>
-                            </div>
-                            <div class="row">
-                                <p class="product-description"><span
-                                            style="font-weight: bold;font-size: 1.2em">Quantity : </span>
-                                    <input type="number" class="quantity" id="quantify_1" name="quantity" min="1" value="1">
-                                </p>
-                            </div>
+                        <div class="row">
+                            <p class="product-description"><span
+                                        style="font-weight: bold;font-size: 1.2em">Quantity : </span>
+                                @if($prd_detail->status == 0)
+                                    <input type="number" class="quantity" id="quantify_1" name="quantity" min="1"
+                                           value="1">
+                                @else
+                                    <input type="number" class="quantity" id="quantify_1" name="quantity"
+                                           value="0" readonly="readonly">
+                                @endif
+                            </p>
                         </div>
-
-                        <div id="right">
-                            <div id="row">
-                                <div class="action">
-                                    <a href="#reviews-anchor" id="open-review-box" style="float: left">
-                                        <button class="add-to-cart btn btn-success" type="button">Review Food
-                                        </button>
-                                    </a>
-                                    <input type="hidden" id="prd_quantify" value="{{$prd_detail->id}}">
-                                    <button class="add-to-cart btn btn-success"  onclick="add_function()">add to cart
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
+
+                    <div id="right">
+                        <div id="row">
+                            <div class="action">
+                                <a href="#reviews-anchor" id="open-review-box" style="float: left">
+                                    <button class="add-to-cart btn btn-success" type="button">Review Food
+                                    </button>
+                                </a>
+                                <input type="hidden" id="prd_quantify" value="{{$prd_detail->id}}">
+                                <button class="add-to-cart btn btn-success" onclick="add_function()">add to cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
+            </div>
             {{--</form>--}}
         </div>
         <div id="comment">

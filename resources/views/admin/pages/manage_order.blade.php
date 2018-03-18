@@ -73,11 +73,16 @@
                         </div>
                         <div class="modal-body" id="result" style="padding: 0 15px 15px 15px !important;"><div class="cart" id="cart">
                             <div class="row">
-                                <div class="col-md-6 text-center">Status : </div>
+                       {{----}}
+                                {{--<div>--}}
+                                    {{--<label>Address: {{$order->address}}</label><br>--}}
+                                    {{--<label>Phone: {{$order->phone}}</label><br>--}}
+                                    {{--<label>Message: {{$order->mess}}</label><br>--}}
+                                {{--</div>--}}
                                 <div class="col-md-6 text-right">
                                 <form method="POST" action="{{route('change_status')}}">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                    <input type="" name="id" v-model ="id" class="id_status">
+                                    <input type="hidden" name="id" v-model ="id" class="id_status">
                                     <select name = "status" class="status" >
                                         <option value="waiting" v-if="status != 'inprogress' && status != 'completed'   "  style="background-color:yellow">waiting</option>
                                         <option value="inprogress"  v-if="status == 'inprogress' || status == 'waiting'" >inprogress</option>

@@ -121,6 +121,11 @@
                                                                   value="{{$user->phone}}" required/></div>
                                 </div>
                                 <div class="form-group">
+                                    <div class="col-md-12"><strong>Message:</strong></div>
+                                    <div class="col-md-12"><input type="text" name="mess" class="form-control"
+                                                                  value=""/></div>
+                                </div>
+                                <div class="form-group">
                                     <div class="col-md-12"><strong>Email Address:</strong></div>
                                     <div class="col-md-12"><input type="text" name="email" class="form-control"
                                                                   value="{{$user->email}}" readonly="readonly"/></div>

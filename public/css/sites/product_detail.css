@@ -233,6 +233,7 @@ a:hover {
 
 #wrapper #ninja-slider.fullscreen {
     background: black;
+    margin-top: -7% !important;
 }
 
 #wrapper #ninja-slider.fullscreen #ninja-slider-prev {
@@ -273,7 +274,6 @@ a:hover {
 }
 
 #wrapper #ninja-slider.fullscreen .slider-inner {
-    max-width: 900px;
     max-height: 80%;
 }
 
